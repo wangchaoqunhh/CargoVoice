@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <declare-styleable name="CommonToolbar">
+        <attr name="title" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="BottomBut">
+        <attr name="but_text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="PlusMinusView">
+        <attr name="plus_minus_name" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="StripView">
+        <attr name="sv_name" format="string" />
+        <attr name="sv_left_text" format="string" />
+        <attr name="sv_right_text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="AddHarvestInfoView">
+        <attr name="affiliated_title" format="string" />
+    </declare-styleable>
+
+</resources>

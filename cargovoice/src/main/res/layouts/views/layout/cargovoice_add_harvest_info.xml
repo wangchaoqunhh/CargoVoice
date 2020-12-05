@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_add_harvest_people_info"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@drawable/cargovoice_click_r8dp_c128">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:alpha="0.6"
+            android:text=""
+            android:textColor="@color/c101"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/svg_ic_plus" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_harvest_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cargovoice_shape_r8dp_c128"
+        android:orientation="vertical"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/tv_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textColor="@color/c101"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="0.6"
+            android:text=""
+            android:textColor="@color/c101"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alpha="0.6"
+            android:text=""
+            android:textColor="@color/c101"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_linkman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text=""
+            android:textColor="@color/c101"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+

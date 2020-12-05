@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.lwb.cargovoice.view.CommonToolbar
+        android:id="@+id/commonToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c100"
+        android:elevation="8dp"
+        app:title="添加货件信息" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/commonToolbar"
+        android:layout_marginBottom="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/commonToolbar"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/et_goods_classes"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/cargovoice_click_r8dp_c128"
+                    android:focusable="false"
+                    android:hint="货件类别"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/c101"
+                    android:textColorHint="@color/c101_0.6"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/svg_ic_caret_right" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/et_goods_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/cargovoice_shape_r8dp_c128"
+                android:gravity="top"
+                android:hint="货件描述"
+                android:minHeight="144dp"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:textColor="@color/c101"
+                android:textColorHint="@color/c101_0.6"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.lwb.cargovoice.view.PlusMinusView
+                    android:id="@+id/pmv_packQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:plus_minus_name="数量" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_packQty_unit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/cargovoice_click_r8dp_c128">
+
+                    <TextView
+                        android:id="@+id/tv_packQty_unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:textColor="@color/c101"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/svg_ic_caret_down" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.lwb.cargovoice.view.PlusMinusView
+                    android:id="@+id/pmv_volume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:plus_minus_name="体积" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_volume_unit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/cargovoice_click_r8dp_c128">
+
+                    <TextView
+                        android:id="@+id/tv_volume_unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:textColor="@color/c101"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/svg_ic_caret_down" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.lwb.cargovoice.view.PlusMinusView
+                    android:id="@+id/pmv_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:plus_minus_name="重量" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_weight_unit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/cargovoice_click_r8dp_c128">
+
+                    <TextView
+                        android:id="@+id/tv_weight_unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:textColor="@color/c101"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/svg_ic_caret_down" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_mark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/cargovoice_shape_r8dp_c128"
+                android:gravity="top"
+                android:hint="唛头"
+                android:minHeight="144dp"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:textColor="@color/c101"
+                android:textColorHint="@color/c101_0.6"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="危险品标识"
+                    android:textColor="@color/c101"
+                    android:textSize="14sp" />
+
+                <Switch
+                    android:id="@+id/switch_is_danger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:thumb="@drawable/switch_custom_thumb_selector"
+                    android:track="@drawable/switch_custom_track_selector" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_danger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="56dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/rl_imoClass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/ev_imoClass"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/cargovoice_click_r8dp_c128"
+                        android:focusable="false"
+                        android:gravity="center_vertical"
+                        android:hint="危险品等级"
+                        android:paddingStart="16dp"
+                        android:textColor="@color/c101"
+                        android:textColorHint="@color/c101_0.6"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/svg_ic_caret_down" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/cargovoice_shape_r8dp_c128">
+
+                    <EditText
+                        android:id="@+id/ev_hs_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="HS编码"
+                        android:inputType="number"
+                        android:textColor="@color/c101"
+                        android:textColorHint="@color/c101_0.6"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <com.lwb.cargovoice.view.BottomBut
+        android:id="@+id/but_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        app:but_text="保存" />
+
+</RelativeLayout>

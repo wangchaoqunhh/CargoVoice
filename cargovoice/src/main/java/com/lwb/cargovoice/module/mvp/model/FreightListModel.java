@@ -1,0 +1,58 @@
+package com.lwb.cargovoice.module.mvp.model;
+
+import android.content.Context;
+
+import com.cargo.basecommon.base.BaseResponse;
+import com.cargo.basecommon.http.RetrofitHelper;
+import com.lwb.cargovoice.module.api.CargoVoiceApi;
+import com.lwb.cargovoice.module.mvp.contract.FreightListContract;
+import com.lwb.cargovoice.module.mvp.entity.response.FreightListResponse;
+
+import java.util.List;
+
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+
+
+public class FreightListModel implements FreightListContract.Model {
+
+    private Context mContext;
+
+    public FreightListModel(Context context) {
+        this.mContext = context;
+    }
+
+    @Override
+    public Observable<BaseResponse<List<FreightListResponse>>> freightList(int pageNumber, int pageSize) {
+        return RetrofitHelper.getInstance(mContext)
+                .getRetrofit()
+                .create(CargoVoiceApi.class)
+                .freightList(pageNumber, pageSize)//调用相应的方法
+                .subscribeOn(Schedulers.io())//请求时切换线程到io线程
+                .observeOn(AndroidSchedulers.mainThread());//处理结果时切换到主线程(ui线程)
+    }
+
+    //进口
+    @Override
+    public Observable<BaseResponse<List<FreightListResponse>>> freightImportList(int pageNumber, int pageSize) {
+        return RetrofitHelper.getInstance(mContext)
+                .getRetrofit()
+                .create(CargoVoiceApi.class)
+                .freightImportList(pageNumber, pageSize)//调用相应的方法
+                .subscribeOn(Schedulers.io())//请求时切换线程到io线程
+                .observeOn(AndroidSchedulers.mainThread());//处理结果时切换到主线程(ui线程)
+    }
+
+    //出口
+    @Override
+    public Observable<BaseResponse<List<FreightListResponse>>> freightExportList(int pageNumber, int pageSize) {
+        return RetrofitHelper.getInstance(mContext)
+                .getRetrofit()
+                .create(CargoVoiceApi.class)
+                .freightExportList(pageNumber, pageSize)//调用相应的方法
+                .subscribeOn(Schedulers.io())//请求时切换线程到io线程
+                .observeOn(AndroidSchedulers.mainThread());//处理结果时切换到主线程(ui线程)
+    }
+
+}

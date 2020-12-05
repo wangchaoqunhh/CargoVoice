@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PasswordView">
+        <attr name="passwordLength" format="integer" />
+        <attr name="passwordPadding" format="dimension" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderSelectColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="cursorFlashTime" format="integer" />
+        <attr name="isCursorEnable" format="boolean" />
+        <attr name="cipherEnable" format="boolean" />
+        <attr name="cursorColor" format="color" />
+        <attr name="mode" format="enum">
+            <enum name="underline" value="0" />
+            <enum name="rect" value="1" />
+        </attr>
+        <!--新增控制字体颜色的自定义属性-->
+        <attr name="passwordTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="WaveSideBar">
+        <attr name="sidebar_lazy_respond" format="boolean" />
+        <attr name="sidebar_text_size" format="dimension" />
+        <attr name="sidebar_text_color" format="color" />
+        <attr name="sidebar_max_offset" format="dimension" />
+        <attr name="sidebar_position" format="enum">
+            <enum name="right" value="0" />
+            <enum name="left" value="1" />
+        </attr>
+        <attr name="sidebar_text_alignment" format="enum">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressbar">
+        <attr name="in_circle_color" format="color" />
+
+
+    </declare-styleable>
+
+    <declare-styleable name="PagingView">
+        <attr name="pv_pageSize" format="integer" />
+    </declare-styleable>
+
+</resources>

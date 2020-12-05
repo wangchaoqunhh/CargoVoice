@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/c100">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/c100"
+        android:elevation="8dp">
+
+        <ImageView
+            android:id="@+id/iv_power"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="6dp"
+            android:padding="6dp"
+            android:src="@drawable/svg_ic_power" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_boll"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp">
+
+            <WebView
+                android:id="@+id/wv"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/rl_control"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_rectangle_r34_8_c222" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/rl_time"
+        android:layout_below="@id/cv_boll"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="12dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:id="@+id/iv_bg"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@drawable/shape_rectangle_r12_c000_50"
+            />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/c101"
+            android:layout_marginTop="13dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="08:00"
+            android:textSize="32sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_apm"
+            android:layout_toRightOf="@id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:includeFontPadding="false"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="4dp"
+            android:textColor="@color/c100_60"
+            android:textSize="16sp"
+            android:text="AM"
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginTop="30dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/c100_60"
+            android:textSize="16sp"
+            android:text="10月1日 星期四"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/rl_time"
+        android:id="@+id/ll_holder_name"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/c101"/>
+
+        <ImageView
+            android:id="@+id/iv_drop_main"
+            android:visibility="gone"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/svg_arrow_drop_down_c100_40"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/ll_holder_name"
+        android:id="@+id/ll_button"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_my_enquiry"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_rectangle_lt_r12_c100_10"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/svg_ic_tax" />
+
+            <TextView
+                android:layout_marginTop="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的询价"
+                android:textColor="@color/c100_80"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/c100_4D"/>
+        <LinearLayout
+            android:id="@+id/ll_my_booking_space"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:background="@color/c100_10">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/svg_ic_ticket"
+                />
+            <TextView
+                android:layout_marginTop="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="我的订舱"
+                android:textColor="@color/c100_80"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/c100_4D"/>
+        <LinearLayout
+            android:id="@+id/ll_my_freight"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_rectangle_rt_r12_c100_10">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/svg_ic_map_2"
+                />
+            <TextView
+                android:layout_marginTop="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="我的货运"
+                android:textColor="@color/c100_80"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_below="@id/ll_button"
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="12dp"
+        android:background="@color/c100_4D"/>
+    <LinearLayout
+        android:layout_below="@id/view"
+        android:id="@+id/ll_button2"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:layout_marginHorizontal="12dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_fast_enquiry"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_rectangle_lb_r12_c100_10">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/svg_ic_currency_yen"
+                />
+            <TextView
+                android:layout_marginTop="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="快速询价"
+                android:textColor="@color/c100_80"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/c100_4D"/>
+        <LinearLayout
+            android:id="@+id/ll_fast_booking_space"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:background="@color/c100_10">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/svg_ic_building_bank"
+                />
+            <TextView
+                android:layout_marginTop="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="快速订舱"
+                android:textColor="@color/c100_80"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/c100_4D"/>
+        <LinearLayout
+            android:id="@+id/ll_bill_query"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_rectangle_rb_r12_c100_10">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/svg_ic_clipboard_check"
+                />
+            <TextView
+                android:layout_marginTop="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="账单查询"
+                android:textColor="@color/c100_80"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:id="@+id/cv_record"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="#eb3254"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="4dp">
+
+        <ImageView
+            android:id="@+id/iv_record"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@drawable/svg_ic_microphone_c101"
+            />
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

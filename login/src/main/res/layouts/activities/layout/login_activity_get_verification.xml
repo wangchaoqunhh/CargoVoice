@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context=".module.mvp.ui.activity.GetVerificationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="6dp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="输入验证码"
+        android:textColor="#cc000000"
+        android:textSize="28sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="验证码已发送至"
+            android:textColor="#99000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_tel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="4dp"
+            android:textColor="#CC000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+    <com.cargo.basecommon.view.PasswordView
+        android:id="@+id/pv_verify_code"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="16dp"
+        app:borderColor="#cc000000"
+        app:borderSelectColor="#33C37D"
+        app:borderWidth="1dp"
+        app:mode="underline"
+        app:passwordTextColor="#cc000000" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="48dp"
+            android:textColor="#66000000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:padding="16dp"
+            android:text="重新获取"
+            android:textColor="#FF33C37D"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

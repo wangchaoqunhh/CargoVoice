@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lwb.cargovoice">
+
+    <application>
+        <!--选择地区-->
+        <activity android:name=".module.mvp.ui.activity.SelectRegionActivity" />
+        <!--添加起运港 和 目的港-->
+        <activity android:name=".module.mvp.ui.activity.AddOriginActivity" />
+        <!-- 我的账单 -->
+        <activity android:name=".module.mvp.ui.activity.BillListActivity" />
+        <!-- 我的货运详情 -->
+        <activity android:name=".module.mvp.ui.activity.FreightDetailsActivity" />
+        <!-- 我的货运列表 -->
+        <activity android:name=".module.mvp.ui.activity.FreightListActivity" />
+        <!-- 我的订舱详情 -->
+        <activity android:name=".module.mvp.ui.activity.BookingSpaceDetailsActivity" />
+        <!-- 我的订舱列表 -->
+        <activity
+            android:name=".module.mvp.ui.activity.BookingSpaceListActivity"
+            android:launchMode="singleTask" />
+        <!-- 货件描述 -->
+        <activity android:name=".module.mvp.ui.activity.AddGoodsDescribeActivity" />
+        <!-- 货件类别 -->
+        <activity android:name=".module.mvp.ui.activity.GoodsTypeActivity" />
+        <!-- 添加货件信息详情 -->
+        <activity android:name=".module.mvp.ui.activity.AddGoodsInfoDetailsActivity" />
+        <!-- 添加货件信息 -->
+        <activity android:name=".module.mvp.ui.activity.AddGoodsInfoActivity" />
+        <!-- 添加收货信息 -->
+        <activity android:name=".module.mvp.ui.activity.AddHarvestInfoActivity" />
+        <!-- 添加集装箱 -->
+        <activity android:name=".module.mvp.ui.activity.AddContainerActivity" />
+        <!-- 我的询价 列表 -->
+        <activity
+            android:name=".module.mvp.ui.activity.EnquiryListActivity"
+            android:launchMode="singleTask" />
+        <!-- 我的询价 添加 前一个输入地址 -->
+        <activity android:name=".module.mvp.ui.activity.EnquiryAddGoalActivity" />
+        <!--询价详情-->
+        <activity android:name=".module.mvp.ui.activity.EnquiryDetailsActivity" />
+        <activity android:name=".module.mvp.ui.activity.MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <!--智能语音-->
+        <activity
+            android:name=".module.mvp.ui.activity.AIActivity"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cargovoice_click_r0dp_c0">
+
+    <RelativeLayout
+        android:id="@+id/rl_destination"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/svg_ic_focus_2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="72dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_dress_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/c101"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_dress_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:alpha="0.6"
+                android:text=""
+                android:textColor="@color/c101"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

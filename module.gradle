@@ -1,0 +1,41 @@
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply from: rootProject.file('default.gradle')//
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-kapt'//因为使用kt导入compiler
+
+android {
+    defaultConfig {
+        sourceSets {
+            main {
+                if (isModule.toBoolean()) {
+                    manifest.srcFile 'src/main/module/AndroidManifest.xml'
+                } else {
+                    manifest.srcFile 'src/main/AndroidManifest.xml'
+                    java {
+                        exclude 'debug/**'
+                    }
+                }
+                res.srcDirs = [
+                        'src/main/res/layouts/activities',
+                        'src/main/res/layouts/fragments',
+                        'src/main/res/layouts/items',
+                        'src/main/res/layouts/views',
+                        'src/main/res/layouts',
+                        'src/main/res'
+                ]
+            }
+        }
+    }
+}
+
+dependencies {
+    api project(':basecommon')
+//    annotationProcessor 'com.jakewharton:butterknife:9.0.0'
+
+    kapt rootProject.ext.dependencies["butterknife-compiler"]
+    kapt rootProject.ext.dependencies["arouter-compiler"]
+}

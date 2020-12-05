@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c100"
+    android:orientation="vertical">
+
+    <com.lwb.cargovoice.view.CommonToolbar
+        android:id="@+id/commonToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c100"
+        android:elevation="8dp"
+        app:title="" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/cargovoice_shape_r12dp_c128"
+                android:orientation="vertical"
+                android:paddingStart="12dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_transport_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/cargovoice_click_r18dp_c005"
+                        android:gravity="center_vertical"
+                        android:minWidth="92dp">
+
+                        <ImageView
+                            android:id="@+id/iv_transport_mode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:src="@drawable/svg_ic_plane_white" />
+
+                        <TextView
+                            android:id="@+id/tv_transport_mode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="空运"
+                            android:textColor="@color/c101"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_select_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_departure_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:layout_toLeftOf="@id/iv_right"
+                            android:text="请选择起运时间"
+                            android:textColor="@color/c101" />
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/svg_ic_chevron_right" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/svg_ic_map_pin" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="44dp"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/cargovoice_dotted_vertical"
+                            android:layerType="software" />
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/svg_ic_focus_2" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_origin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="30dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_origin_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/c101"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_origin_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="请选择起运港"
+                                android:textColor="@color/c101"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_destination_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/c101"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_destination_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="请选择目的港"
+                                android:textColor="@color/c101"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical"
+                android:text="集装方式"
+                android:textColor="@color/c101"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:gravity="center_vertical"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_bulk"
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/cargovoice_select_r8dp_c128_c005"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/svg_ic_asset_22_1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="散货"
+                        android:textColor="@color/c101"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_encasement"
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/cargovoice_select_r8dp_c128_c005"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="16dp"
+                        android:src="@drawable/svg_ic_asset_21_1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="整箱"
+                        android:textColor="@color/c101"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.lwb.cargovoice.view.AddContainerView
+                android:id="@+id/add_container_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical"
+                android:text="货件信息"
+                android:textColor="@color/c101"
+                android:textSize="12sp" />
+
+            <com.lwb.cargovoice.view.AddGoodsInfo
+                android:id="@+id/add_goods_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical"
+                android:text="运输服务"
+                android:textColor="@color/c101"
+                android:textSize="12sp" />
+
+            <RelativeLayout
+                android:id="@+id/service_level"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/cargovoice_click_r8dp_c128">
+
+                <EditText
+                    android:id="@+id/tv_service_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:hint="服务级别"
+                    android:textColor="@color/c101"
+                    android:textColorHint="@color/c101_0.6"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/svg_ic_chevron_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/inco_term"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/cargovoice_click_r8dp_c128">
+
+                <EditText
+                    android:id="@+id/tv_inco_term"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:hint="贸易条款"
+                    android:text=""
+                    android:textColor="@color/c101"
+                    android:textColorHint="@color/c101_0.6"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/svg_ic_chevron_right" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical"
+                android:text="发货信息"
+                android:textColor="@color/c101"
+                android:textSize="12sp" />
+
+            <com.lwb.cargovoice.view.AddHarvestInfoView
+                android:id="@+id/add_deliver_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:affiliated_title="添加发货人信息" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="24dp"
+                android:gravity="center_vertical"
+                android:text="收货信息"
+                android:textColor="@color/c101"
+                android:textSize="12sp" />
+
+            <com.lwb.cargovoice.view.AddHarvestInfoView
+                android:id="@+id/add_harvest_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:affiliated_title="添加收货人信息" />
+
+            <com.lwb.cargovoice.view.BottomBut
+                android:id="@+id/commit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="90dp"
+                app:but_text="提交" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

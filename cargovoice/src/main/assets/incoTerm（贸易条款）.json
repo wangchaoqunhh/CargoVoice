@@ -1,0 +1,114 @@
+[
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "CFR",
+    "nameEn": "Cost And Freight",
+    "nameCn": "成本加运费",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "CIF",
+    "nameEn": "Cost，Insurance And Freight",
+    "nameCn": "成本、保险加运费",
+    "isMostUsed": "true"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "CIP",
+    "nameEn": "Carriage and Insurance Paid To",
+    "nameCn": "运费及保险付至",
+    "isMostUsed": "true"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "CPT",
+    "nameEn": "Carriage Paid To",
+    "nameCn": "运费付至",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "DAP",
+    "nameEn": "Delivered At Place",
+    "nameCn": "目的地交货（卖方不卸货）",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "DAT",
+    "nameEn": "Delivered At Terminal",
+    "nameCn": "目的地/港集散站交货（卖方需卸货）",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "DDP",
+    "nameEn": "Delivered Duty Paid",
+    "nameCn": "指定目的地完税后交货",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "DPU",
+    "nameEn": "Delivered at Place Unloaded",
+    "nameCn": "卸货地交货",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "EXW",
+    "nameEn": "Ex Works",
+    "nameCn": "工厂交货",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "FAS",
+    "nameEn": "Free Alongside Ship",
+    "nameCn": "船边交货",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "FC1",
+    "nameEn": "FCA-Free Carrier(seller is responsible for origin and loading)",
+    "nameCn": "货交承运人",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "FC2",
+    "nameEn": "FCA-Free Carrier(buyer is responsible for origin and loading)",
+    "nameCn": "货交承运人",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "FCA",
+    "nameEn": "FCA-Free Carrier(seller is responsible for origin,buyer for loading)",
+    "nameCn": "货交承运人",
+    "isMostUsed": "false"
+  },
+  {
+    "categoryCode": "AIR;FAS;COU;FSA;SEA",
+    "categoryName": "贸易方式",
+    "code": "FOB",
+    "nameEn": "Free On Boad",
+    "nameCn": "船上交货",
+    "isMostUsed": "true"
+  }
+]

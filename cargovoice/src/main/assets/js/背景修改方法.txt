@@ -1,0 +1,8 @@
+6.moon的背景色需要改，最好是透明。本地的index已经去掉了很多内容，如有必要重新下载。
+   moon的背景色在：script.js中，修改“_dark”变量即可，具体数值参照：https://encycolorpedia.cn/，使其背景颜色与app的背景颜色一致即可。
+   _dark:0x000000,  黑色
+   _dark:0xffffff，白色 
+   透明背景：
+   将script.js中
+并且renderer = new THREE.WebGLRenderer({antialias:true, alpha:true})  将alpha=true，设置为透明即可。
+

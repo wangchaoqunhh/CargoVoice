@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".module.mvp.ui.activity.FirstActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="24dp"
+            android:text="欢迎使用铁扇网"
+            android:textColor="#cc000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="48dp"
+            android:text="为了给您提供更好的服务，铁扇网需要您授权以下权限和信息"
+            android:textColor="#cc000000"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="30dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_location_two"/>
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginLeft="56dp"
+                android:layout_marginTop="16dp"
+                android:text="定位"
+                android:textColor="#cc000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_location"
+                android:layout_marginLeft="56dp"
+                android:layout_marginTop="4dp"
+                android:text="提供精准的定位、路线规划服务"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_camera_big" />
+
+            <TextView
+                android:id="@+id/tv_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginLeft="56dp"
+                android:layout_marginTop="16dp"
+                android:text="拍照"
+                android:textColor="#cc000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_camera"
+                android:layout_marginLeft="56dp"
+                android:layout_marginTop="4dp"
+                android:text="用于拍照,上传车辆照片"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_reader_big" />
+
+            <TextView
+                android:id="@+id/tv_inform"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginLeft="56dp"
+                android:layout_marginTop="16dp"
+                android:text="读写"
+                android:textColor="#cc000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_inform"
+                android:layout_marginLeft="56dp"
+                android:layout_marginTop="4dp"
+                android:text="用于内存读写,储存数据"
+                android:textColor="#66000000"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="86dp"
+            android:layout_marginRight="44dp"
+            android:text="您可以在系统设置中关闭授权，但可能会影响部分功能使用。"
+            android:textColor="#66000000"
+            android:textSize="12sp" />
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/tv_know"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_first_green"
+        android:text="我知道了"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_above="@id/tv_know"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="horizontal">
+        <ImageView
+
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/svg_round_check_circle"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:text="请在使用前查看并同意"
+            android:textColor="#66000000"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《铁扇网用户协议》"
+            android:textColor="#FF33C37D"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</RelativeLayout>

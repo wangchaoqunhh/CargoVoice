@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".module.mvp.ui.activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.lwb.cargovoice.view.BillListView
+            android:id="@+id/blv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/but3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="首页" />
+
+        <Button
+            android:id="@+id/but_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录" />
+
+        <Button
+            android:id="@+id/but_list_xunjia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的询价" />
+
+        <Button
+            android:id="@+id/but_list_ding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的订场" />
+
+        <com.lwb.cargovoice.view.ProgressBarView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

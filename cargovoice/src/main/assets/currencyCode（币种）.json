@@ -1,0 +1,32 @@
+[
+  {
+    "code": "AUD",
+    "nameEn": "AUD",
+    "nameCn": "澳元",
+    "isMostUsed": "true"
+  },
+  {
+    "code": "CNY",
+    "nameEn": "CNY",
+    "nameCn": "人民币",
+    "isMostUsed": "true"
+  },
+  {
+    "code": "EUR",
+    "nameEn": "EUR",
+    "nameCn": "欧元",
+    "isMostUsed": "true"
+  },
+  {
+    "code": "HKD",
+    "nameEn": "HKD",
+    "nameCn": "港币",
+    "isMostUsed": "true"
+  },
+  {
+    "code": "USD",
+    "nameEn": "USD",
+    "nameCn": "美元",
+    "isMostUsed": "true"
+  }
+]

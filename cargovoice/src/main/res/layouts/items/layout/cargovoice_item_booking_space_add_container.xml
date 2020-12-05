@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="88dp"
+        android:layout_height="100dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="-64dp"
+        android:paddingStart="30dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:src="@drawable/svg_ic_trash" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/cargovoice_shape_r16dp_c129"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <TextView
+            android:id="@+id/serial"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/c101"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_container_type"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="2"
+                android:background="@drawable/cargovoice_shape_r8dp_c128">
+
+                <TextView
+                    android:id="@+id/tv_container_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="箱型"
+                    android:textColor="@color/c101"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/svg_ic_caret_down" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_container_num"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/cargovoice_shape_r8dp_c128">
+
+                <TextView
+                    android:id="@+id/tv_container_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="41dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical"
+                    android:text="0箱"
+                    android:textColor="@color/c101"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="45dp"
+                android:gravity="center_vertical"
+                android:text="SOC箱"
+                android:textColor="@color/c101"
+                android:textSize="14sp" />
+
+
+            <Switch
+                android:id="@+id/switch_soc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:thumb="@drawable/switch_custom_thumb_selector"
+                android:track="@drawable/switch_custom_track_selector" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_container_code"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/cargovoice_shape_r8dp_c128"
+            android:gravity="center_vertical"
+            android:hint="集装箱号码"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:paddingStart="16dp"
+            android:textColor="@color/c101"
+            android:textColorHint="@color/c101_0.6"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#EB3254</color>
+    <color name="black14">#14000000</color>
+    <color name="black">#000000</color>
+    <color name="black33">#33000000</color>
+    <color name="black80">#80000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#fff</color>
+    <color name="blackcc">#CC000000</color>
+    <color name="black99">#99000000</color>
+    <color name="black66">#66000000</color>
+    <color name="carStep">#CC606060</color>
+    <color name="red">#FFFE617E</color>
+    <color name="redLight">#CCFE617E</color>
+
+    <color name="c201">#FF5722</color>
+    <color name="c101">#FFFFFF</color>
+    <color name="c102">#D8D8D8</color>
+    <color name="c100">#222222</color>
+    <color name="c129">#2B2B2B</color>
+    <color name="c128">#414141</color>
+    <color name="c127">#707070</color>
+    <color name="c126">#2f2f2f</color>
+    <color name="c125">#333333</color>
+    <color name="c005">#EB3254</color>
+    <color name="c003">#17D56B</color>
+    <color name="c124">#424242</color>
+    <color name="c101_0.02">#05FFFFFF</color>
+    <color name="c101_0.04">#0AFFFFFF</color>
+    <color name="c101_0.6">#99FFFFFF</color>
+
+    <color name="c100_24">#3DFFFFFF</color>
+    <color name="c100_10">#1AFFFFFF</color>
+    <color name="c000_50">#7D000000</color>
+    <color name="c100_4D">#4d4d4d</color>
+    <color name="c100_00">#00FFFFFF</color>
+    <color name="c100_60">#99FFFFFF</color>
+    <color name="c100_40">#66FFFFFF</color>
+    <color name="c100_80">#CCFFFFFF</color>
+    <color name="c100_20">#33FFFFFF</color>
+    <color name="c14E">#4E4E4E</color>
+    <color name="logo_background">#EB3254</color>
+    <color name="c129_97">#F72B2B2B</color>
+    <color name="c128_80">#CC414141</color>
+
+</resources>

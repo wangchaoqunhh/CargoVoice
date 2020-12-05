@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.lwb.cargovoice.view.CommonToolbar
+        android:id="@+id/commonToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c100"
+        android:elevation="8dp"
+        app:title="收货信息" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commonToolbar"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/et_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cargovoice_click_r8dp_c128"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:hint="国家/省/市"
+                android:minHeight="48dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="30dp"
+                android:text=""
+                android:textColor="@color/c101"
+                android:textColorHint="@color/c101_0.6"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/svg_ic_caret_right" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_detail_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/cargovoice_shape_r8dp_c128"
+            android:gravity="top"
+            android:hint="详细地址"
+            android:minHeight="96dp"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:textColor="@color/c101"
+            android:textColorHint="@color/c101_0.6"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/et_company"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/cargovoice_shape_r8dp_c128"
+            android:ellipsize="end"
+            android:hint="名称"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:text=""
+            android:textColor="@color/c101"
+            android:textColorHint="@color/c101_0.6"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_linkman_name"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/cargovoice_shape_r8dp_c128"
+                android:ellipsize="end"
+                android:hint="联系人"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="16dp"
+                android:textColor="@color/c101"
+                android:textColorHint="@color/c101_0.6"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/et_linkman_phone"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/cargovoice_shape_r8dp_c128"
+                android:ellipsize="end"
+                android:hint="联系电话"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingStart="16dp"
+                android:textColor="@color/c101"
+                android:textColorHint="@color/c101_0.6"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_postcode"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/cargovoice_shape_r8dp_c128"
+            android:gravity="center_vertical"
+            android:hint="邮编"
+            android:inputType="number"
+            android:paddingStart="16dp"
+            android:textColor="@color/c101"
+            android:textColorHint="@color/c101_0.6"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <com.lwb.cargovoice.view.BottomBut
+        android:id="@+id/but_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        app:but_text="保存" />
+
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+[
+{"code":"G","nameEn":"Grams","nameCn":"克","isMostUsed":"true"},
+{"code":"HG","nameEn":"Hectograms","nameCn":"百克","isMostUsed":"false"},
+{"code":"KG","nameEn":"Kilograms","nameCn":"千克","isMostUsed":"true"},
+{"code":"KT","nameEn":"Kilotons","nameCn":"千吨","isMostUsed":"false"},
+{"code":"LB","nameEn":"Pounds","nameCn":"磅","isMostUsed":"false"},
+{"code":"LT","nameEn":"Pounds Troy","nameCn":"磅-金衡制","isMostUsed":"false"},
+{"code":"MC","nameEn":"Metric Carat","nameCn":"公制克拉","isMostUsed":"false"},
+{"code":"MG","nameEn":"Milligrams","nameCn":"毫克","isMostUsed":"false"},
+{"code":"OT","nameEn":"Ounces Troy","nameCn":"盎司=金衡制","isMostUsed":"false"},
+{"code":"OZ","nameEn":"Ounces","nameCn":"盎司","isMostUsed":"false"},
+{"code":"T","nameEn":"Tonnes","nameCn":"吨","isMostUsed":"true"},
+{"code":"TL","nameEn":"Long Tons(2240lb)","nameCn":"长吨(2240磅)","isMostUsed":"false"},
+{"code":"TN","nameEn":"Short Tons(2000lb)","nameCn":"短吨(2000磅)","isMostUsed":"false"}
+]

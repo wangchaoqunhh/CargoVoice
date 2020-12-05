@@ -1,0 +1,992 @@
+[
+  {
+    "code": "GEN",
+    "nameEn": "General",
+    "nameCn": "通用",
+    "isMostUsed": "true"
+  },
+  {
+    "code": "AFAT",
+    "nameEn": "ANIMAL FAT",
+    "nameCn": "动物油脂",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "AFLW",
+    "nameEn": "ARTIFICIAL FLOWERS",
+    "nameCn": "人造花",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "AFOD",
+    "nameEn": "ANIMAL FODDER",
+    "nameCn": "动物饲料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "AIRC",
+    "nameEn": "AIRCRAFT",
+    "nameCn": "飞机",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "ALUM",
+    "nameEn": "ALUMINIUM",
+    "nameCn": "铝",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "AMMN",
+    "nameEn": "AMMUNITION",
+    "nameCn": "弹药",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "APRD",
+    "nameEn": "ANIMAL PRODUCTS",
+    "nameCn": "动物制品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "ARMS",
+    "nameEn": "ARMS",
+    "nameCn": "武器",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "ASBE",
+    "nameEn": "ASBESTOS",
+    "nameCn": "石棉",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "ASH",
+    "nameEn": "ASH",
+    "nameCn": "矿灰",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "ATPT",
+    "nameEn": "AUTO PARTS",
+    "nameCn": "汽车配件",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "BEDD",
+    "nameEn": "BEDDING",
+    "nameCn": "寝具",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "BLRS",
+    "nameEn": "BOILERS",
+    "nameCn": "锅炉",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "BMTL",
+    "nameEn": "BASE METALS",
+    "nameCn": "普通金属",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "BOAT",
+    "nameEn": "BOATS",
+    "nameCn": "船",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "BVRG",
+    "nameEn": "BEVERAGE",
+    "nameCn": "饮料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CBLS",
+    "nameEn": "CABLES",
+    "nameCn": "电缆",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CEME",
+    "nameEn": "CEMENT",
+    "nameCn": "水泥",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CERL",
+    "nameEn": "CEREAL",
+    "nameCn": "谷类",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CFBR",
+    "nameEn": "CROCHETED FABRICS",
+    "nameCn": "钩针织物",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CHEM",
+    "nameEn": "CHEMICALS",
+    "nameCn": "化学药品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CHRC",
+    "nameEn": "CHARCOAL",
+    "nameCn": "木炭",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CLCK",
+    "nameEn": "CLOCKS",
+    "nameCn": "钟",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CLTH",
+    "nameEn": "CLOTHING",
+    "nameCn": "服装",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CNDL",
+    "nameEn": "CANDLES",
+    "nameCn": "蜡烛",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "COCO",
+    "nameEn": "COCOA",
+    "nameCn": "可可粉",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "COFF",
+    "nameEn": "COFFEE",
+    "nameCn": "咖啡",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "COIN",
+    "nameEn": "COIN",
+    "nameCn": "铸币",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "COPR",
+    "nameEn": "COPPER",
+    "nameCn": "铜",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CORK",
+    "nameEn": "CORK",
+    "nameCn": "软木",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "COS",
+    "nameEn": "COSMETICS",
+    "nameCn": "化妆品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "COTN",
+    "nameEn": "COTTON",
+    "nameCn": "棉",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CRMC",
+    "nameEn": "CERAMICS",
+    "nameCn": "陶瓷",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CRPT",
+    "nameEn": "CARPETS",
+    "nameCn": "地毯",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CRST",
+    "nameEn": "CRUSTACEANS",
+    "nameCn": "甲壳类",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CUSH",
+    "nameEn": "CUSHIONS",
+    "nameCn": "垫子",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "CUTL",
+    "nameEn": "CUTLERY",
+    "nameCn": "餐具",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "DAIR",
+    "nameEn": "DAIRY PRODUCE",
+    "nameCn": "乳制品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "DEXT",
+    "nameEn": "DYEING EXTRACTS",
+    "nameCn": "染料提取物",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "DYES",
+    "nameEn": "DYES",
+    "nameCn": "染料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "EEQP",
+    "nameEn": "ELECTRICAL EQUIPMENT",
+    "nameCn": "电气设备",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "EFRT",
+    "nameEn": "FRUIT",
+    "nameCn": "水果",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "EMBR",
+    "nameEn": "EMBROIDERY",
+    "nameCn": "刺绣品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "EMCH",
+    "nameEn": "ELECTRICAL MACHINERY",
+    "nameCn": "电力机械",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "EOIL",
+    "nameEn": "ESSENTIAL OILS",
+    "nameCn": "精油",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "EXPL",
+    "nameEn": "EXPLOSIVES",
+    "nameCn": "爆炸品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FBRC",
+    "nameEn": "FABRIC",
+    "nameCn": "织物",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FELT",
+    "nameEn": "FELT",
+    "nameCn": "毛毡",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FIS",
+    "nameEn": "FISH",
+    "nameCn": "鱼",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FLOU",
+    "nameEn": "FLOUR",
+    "nameCn": "粉",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FORK",
+    "nameEn": "FORKS",
+    "nameCn": "叉子",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FRSK",
+    "nameEn": "FURSKINS",
+    "nameCn": "毛皮",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FRTL",
+    "nameEn": "FERTILISERS",
+    "nameCn": "肥料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FTHR",
+    "nameEn": "FEATHERS",
+    "nameCn": "羽毛",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FTWR",
+    "nameEn": "FOOTWEAR",
+    "nameCn": "鞋类",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "FURN",
+    "nameEn": "FURNITURE",
+    "nameCn": "家具",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "GAME",
+    "nameEn": "GAMES",
+    "nameCn": "游戏品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "GENL",
+    "nameEn": "GENERAL",
+    "nameCn": "普货",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "GLAS",
+    "nameEn": "GLASS",
+    "nameCn": "玻璃",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "GLUE",
+    "nameEn": "GLUE",
+    "nameCn": "胶水",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "HAIR",
+    "nameEn": "HAIR",
+    "nameCn": "毛发",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "HAZ",
+    "nameEn": "HAZARDOUS GOODS",
+    "nameCn": "危险品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "HDGR",
+    "nameEn": "HEADGEAR",
+    "nameCn": "帽子",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "HNDB",
+    "nameEn": "HANDBAGS",
+    "nameCn": "手提包",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "HRNS",
+    "nameEn": "HARNESSES",
+    "nameCn": "挽具",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "IJEW",
+    "nameEn": "IMITATION JEWELLERY",
+    "nameCn": "仿首饰",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "IRON",
+    "nameEn": "IRON",
+    "nameCn": "铁",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "KFBR",
+    "nameEn": "KNITTED FABRICS",
+    "nameCn": "针织物",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "LACE",
+    "nameEn": "LACE",
+    "nameCn": "蕾丝",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "LAMP",
+    "nameEn": "LAMPS",
+    "nameCn": "灯",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "LBRC",
+    "nameEn": "LUBRICANT",
+    "nameCn": "润滑剂",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "LEAD",
+    "nameEn": "LEAD",
+    "nameCn": "铅",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "LFIT",
+    "nameEn": "LIGHTING FITTINGS",
+    "nameCn": "照明设备",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "LIME",
+    "nameEn": "LIME",
+    "nameCn": "酸橙",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "LIV",
+    "nameEn": "LIVE ANIMALS",
+    "nameCn": "活体动物",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "LTHR",
+    "nameEn": "LEATHER",
+    "nameCn": "皮革",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MACH",
+    "nameEn": "MACHINERY",
+    "nameCn": "机器",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MAL",
+    "nameEn": "MALT",
+    "nameCn": "麦芽",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MAPP",
+    "nameEn": "MECHANICAL APPLIANCES",
+    "nameCn": "机械用具",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MDIN",
+    "nameEn": "MEDICAL INSTRUMENTS",
+    "nameCn": "医疗器械",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MEAT",
+    "nameEn": "MEAT",
+    "nameCn": "肉类",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MFUE",
+    "nameEn": "MINERAL FUEL",
+    "nameCn": "矿物燃料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MINL",
+    "nameEn": "MINERALS",
+    "nameCn": "矿物",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MNSC",
+    "nameEn": "MANUSCRIPTS",
+    "nameCn": "手稿",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MOIL",
+    "nameEn": "MINERAL OILS",
+    "nameCn": "矿物油",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MSIN",
+    "nameEn": "MUSICAL INSTRUMENTS",
+    "nameCn": "乐器",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MT",
+    "nameEn": "CONTAINERS EMPTY",
+    "nameCn": "空集装箱",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MTHZ",
+    "nameEn": "CONTAINERS EMPTY - HAZARDOUS",
+    "nameCn": "空集装箱 - 危险品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MTSQ",
+    "nameEn": "MECHANICAL EQUIPMENT",
+    "nameCn": "机械设备",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MTTR",
+    "nameEn": "MATTRESSES",
+    "nameCn": "褥垫",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "MVEH",
+    "nameEn": "AUTO - MOTOR VEHICLES",
+    "nameCn": "汽车－机动车辆",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "NEWS",
+    "nameEn": "NEWSPAPERS",
+    "nameCn": "报纸",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "NICK",
+    "nameEn": "NICKEL",
+    "nameCn": "镍",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "NRCT",
+    "nameEn": "NUCLEAR REACTOR",
+    "nameCn": "核反应堆",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "NUTS",
+    "nameEn": "NUTS",
+    "nameCn": "坚果",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "OCHM",
+    "nameEn": "ORGANIC CHEMICALS",
+    "nameCn": "有机化工原料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "ORE",
+    "nameEn": "ORE",
+    "nameCn": "矿石",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PAIN",
+    "nameEn": "PAINT",
+    "nameCn": "油漆",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PAPR",
+    "nameEn": "PAPER",
+    "nameCn": "纸类",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PHAE",
+    "nameEn": "PHARMACEUTICALS",
+    "nameCn": "医药品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PHGD",
+    "nameEn": "PHOTOGRAPHY GOODS",
+    "nameCn": "摄影用品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PLNT",
+    "nameEn": "PLANTS",
+    "nameCn": "植物",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PLSH",
+    "nameEn": "POLISH",
+    "nameCn": "光泽剂",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PLSR",
+    "nameEn": "PLASTER",
+    "nameCn": "胶泥",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PLST",
+    "nameEn": "PLASTICS",
+    "nameCn": "塑料制品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PMTL",
+    "nameEn": "PRECIOUS METALS",
+    "nameCn": "贵金属",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PRFM",
+    "nameEn": "PERFUME",
+    "nameCn": "香水",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PSTN",
+    "nameEn": "PRECIOUS STONES",
+    "nameCn": "宝石",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "PWAX",
+    "nameEn": "PREPARED WAX",
+    "nameCn": "加工蜡",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "RCRP",
+    "nameEn": "RIDING-CROPS",
+    "nameCn": "短马鞭",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "RESI",
+    "nameEn": "RESIN",
+    "nameCn": "树脂",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "RFXT",
+    "nameEn": "RAILWAY FIXTURES",
+    "nameCn": "铁道固定设备",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "RHDS",
+    "nameEn": "RAW HIDES",
+    "nameCn": "生毛皮",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "ROPE",
+    "nameEn": "ROPE",
+    "nameCn": "绳索",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "RSKN",
+    "nameEn": "RAW SKINS",
+    "nameCn": "生皮",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "RUBB",
+    "nameEn": "RUBBER",
+    "nameCn": "橡胶",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SALT",
+    "nameEn": "SALT",
+    "nameCn": "盐",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SDLS",
+    "nameEn": "SADDLES",
+    "nameCn": "马鞍",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SEED",
+    "nameEn": "SEEDS",
+    "nameCn": "种子",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SFRN",
+    "nameEn": "STUFFED FURNISHINGS",
+    "nameCn": "充填家具",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SHIP",
+    "nameEn": "SHIPS",
+    "nameCn": "船只",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SILK",
+    "nameEn": "SILK",
+    "nameCn": "丝绸",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SLAG",
+    "nameEn": "SLAG",
+    "nameCn": "熔渣",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SNDR",
+    "nameEn": "SOUND RECORDERS",
+    "nameCn": "录音机",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SOAP",
+    "nameEn": "SOAP",
+    "nameCn": "肥皂",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SPCR",
+    "nameEn": "SPACECRAFT",
+    "nameCn": "宇宙飞船",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SPIC",
+    "nameEn": "SPICES",
+    "nameCn": "香料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SPNS",
+    "nameEn": "SPOONS",
+    "nameCn": "汤匙",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SPRT",
+    "nameEn": "SPIRITS",
+    "nameCn": "酒类",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "STEL",
+    "nameEn": "STEEL PRODUCTS",
+    "nameCn": "钢材",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "STON",
+    "nameEn": "STONE",
+    "nameCn": "石料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "STRC",
+    "nameEn": "STARCHES",
+    "nameCn": "淀粉",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "STRW",
+    "nameEn": "STRAW",
+    "nameCn": "刍草",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "STST",
+    "nameEn": "STEEL",
+    "nameCn": "钢",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SUGR",
+    "nameEn": "SUGAR",
+    "nameCn": "糖",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "SULP",
+    "nameEn": "SULPHUR",
+    "nameCn": "硫磺",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TEA",
+    "nameEn": "TEA",
+    "nameCn": "茶",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TIN",
+    "nameEn": "TIN",
+    "nameCn": "锡",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TOBC",
+    "nameEn": "TOBACCO",
+    "nameCn": "烟草",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TOOL",
+    "nameEn": "TOOLS",
+    "nameCn": "工具",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TOYS",
+    "nameEn": "TOYS",
+    "nameCn": "玩具",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TPST",
+    "nameEn": "TAPESTRIES",
+    "nameCn": "挂毯",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TREE",
+    "nameEn": "TREES",
+    "nameCn": "树木",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TRIM",
+    "nameEn": "TRIMMINGS",
+    "nameCn": "装饰物",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TXTL",
+    "nameEn": "TEXTILES",
+    "nameCn": "纺织品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "TXTR",
+    "nameEn": "TANNING EXTRACTS",
+    "nameCn": "栲胶",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "UMBR",
+    "nameEn": "UMBRELLAS",
+    "nameCn": "伞",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "VARN",
+    "nameEn": "VARNISH",
+    "nameCn": "清漆",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "VFAT",
+    "nameEn": "VEGETABLE FATS",
+    "nameCn": "植物脂肪",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "VGTB",
+    "nameEn": "VEGETABLES",
+    "nameCn": "蔬菜",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "VNGR",
+    "nameEn": "VINEGAR",
+    "nameCn": "醋",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WADD",
+    "nameEn": "WADDING",
+    "nameCn": "纤维填料",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WART",
+    "nameEn": "WORKS OF ART",
+    "nameCn": "艺术品",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WAXA",
+    "nameEn": "ARTIFICIAL WAX",
+    "nameCn": "人工蜡",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WAXD",
+    "nameEn": "DENTAL WAX",
+    "nameCn": "牙科用蜡",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WAXM",
+    "nameEn": "MINERAL WAX",
+    "nameCn": "矿物蜡",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WDTR",
+    "nameEn": "WASHING DETERGENT",
+    "nameCn": "洗涤剂",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WHET",
+    "nameEn": "WHEAT",
+    "nameCn": "小麦",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WHIP",
+    "nameEn": "WHIPS",
+    "nameCn": "鞭子",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WLKS",
+    "nameEn": "WALKING-STICK",
+    "nameCn": "手杖",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WOOD",
+    "nameEn": "WOOD",
+    "nameCn": "木材",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WOOL",
+    "nameEn": "WOOL",
+    "nameCn": "羊毛",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "WTCH",
+    "nameEn": "WATCHES",
+    "nameCn": "手表",
+    "isMostUsed": "false"
+  },
+  {
+    "code": "ZINC",
+    "nameEn": "ZINC",
+    "nameCn": "锌",
+    "isMostUsed": "false"
+  }
+]

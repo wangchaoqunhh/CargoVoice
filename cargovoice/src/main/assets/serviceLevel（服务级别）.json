@@ -1,0 +1,12 @@
+[
+{"categoryCode":"LSE;ULD","code":"A2A","nameEn":"AIRPORT TO AIRPORT","nameCn":"空港到空港","isMostUsed":"true"},
+{"categoryCode":"LSE;ULD","code":"A2D","nameEn":"AIRPORT TO DOOR","nameCn":"空港到门","isMostUsed":"false"},
+{"categoryCode":"LCL;BBK;BLK;LQD","code":"C2C","nameEn":"CFS TO CFS","nameCn":"货站到货站","isMostUsed":"false"},
+{"categoryCode":"LCL;BBK;BLK;LQD","code":"C2D","nameEn":"CFS TO DOOR","nameCn":"货站到门","isMostUsed":"false"},
+{"categoryCode":"LSE;ULD","code":"D2A","nameEn":"DOOR TO AIRPORT","nameCn":"门到空港","isMostUsed":"false"},
+{"categoryCode":"LCL;BBK;BLK;LQD","code":"D2C","nameEn":"DOOR TO CFS","nameCn":"门到货站","isMostUsed":"false"},
+{"categoryCode":"LCL;BBK;BLK;LQD;FCL;LSE;ULD","code":"D2D","nameEn":"DOOR TO DOOR","nameCn":"门到门","isMostUsed":"true"},
+{"categoryCode":"FCL","code":"D2Y","nameEn":"DOOR TO CY","nameCn":"门到堆场","isMostUsed":"false"},
+{"categoryCode":"FCL","code":"Y2D","nameEn":"CY TO DOOR","nameCn":"堆场到门","isMostUsed":"false"},
+{"categoryCode":"FCL","code":"Y2Y","nameEn":"CY TO CY","nameCn":"堆场到堆场","isMostUsed":"true"}
+]

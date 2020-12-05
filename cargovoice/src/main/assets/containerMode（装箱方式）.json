@@ -1,0 +1,30 @@
+[
+  {
+    "categoryCode": "ROA;RAI;COU;FSA;SEA",
+    "code": "FCL",
+    "nameEn": "Full Container Load",
+    "nameCn": "整箱货",
+    "isMostUsed": "true"
+  },
+  {
+    "categoryCode": "ROA;RAI;COU;FSA;SEA",
+    "code": "LCL",
+    "nameEn": "Less Container Load",
+    "nameCn": "散货",
+    "isMostUsed": "true"
+  },
+  {
+    "categoryCode": "AIR;FAS",
+    "code": "LSE",
+    "nameEn": "Loose",
+    "nameCn": "空运散货",
+    "isMostUsed": "true"
+  },
+  {
+    "categoryCode": "AIR;FAS",
+    "code": "ULD",
+    "nameEn": "Unit Load Device",
+    "nameCn": "ULD集装箱",
+    "isMostUsed": "true"
+  }
+]

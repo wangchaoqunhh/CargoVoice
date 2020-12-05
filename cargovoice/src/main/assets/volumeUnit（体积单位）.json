@@ -1,0 +1,12 @@
+[
+{"code":"CC","nameEn":"Cubic Centimeters","nameCn":"立方厘米","isMostUsed":"true"},
+{"code":"CF","nameEn":"Cubic Feet","nameCn":"立方英尺","isMostUsed":"false"},
+{"code":"CI","nameEn":"Cubic Inches","nameCn":"立方英寸","isMostUsed":"false"},
+{"code":"CY","nameEn":"Cubic Yards","nameCn":"立方码","isMostUsed":"false"},
+{"code":"D3","nameEn":"Cubic Decimeters","nameCn":"立方分米","isMostUsed":"false"},
+{"code":"GA","nameEn":"US Gallons","nameCn":"美制加仑","isMostUsed":"false"},
+{"code":"GI","nameEn":"Imperial Gallons","nameCn":"英制加仑","isMostUsed":"false"},
+{"code":"L","nameEn":"Liter","nameCn":"升","isMostUsed":"true"},
+{"code":"M3","nameEn":"Cubic Meters","nameCn":"立方米","isMostUsed":"true"},
+{"code":"ML","nameEn":"Mega Liter","nameCn":"百万升","isMostUsed":"false"}
+]

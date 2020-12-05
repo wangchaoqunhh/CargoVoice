@@ -1,0 +1,11 @@
+apply plugin: 'com.android.application'
+apply from: rootProject.file('default.gradle')
+
+dependencies {
+    api project(':basecommon')
+    api project(':baseui')
+//    api project(':carchoose')
+    api project(':cargovoice')
+    api project(':login')
+//    api project(':home')
+}

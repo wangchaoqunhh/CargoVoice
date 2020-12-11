@@ -341,7 +341,7 @@ public class AIActivity extends BaseFragmentActivity<AIContract.View, AIPresente
                         if (isVolume) {
                             int code = mTts.startSpeaking(aiResponses.get(i).getText(), mSpeakListener);
                             if (code != ErrorCode.SUCCESS) {
-                                AirToast.showToast("李文博 语音合成失败,错误码: " + code + ",请点击网址https://www.xfyun.cn/document/error-code查询解决方案");
+                                Log.e("李文博","语音合成失败,错误码: " + code + ",请点击网址https://www.xfyun.cn/document/error-code查询解决方案");
                             }
                         }
                         //有按钮

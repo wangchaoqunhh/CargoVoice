@@ -36,6 +36,14 @@ public class DataDialogFragment extends DialogFragment {
     int i = 0;
 
     boolean isAdd = true;
+    /**
+     * 添加字段时间间隔
+     */
+    int addTime = 400;
+    /**
+     * 改变颜色时间间隔
+     */
+    int changeColorTime = 400;
 
     Handler han = new Handler() {
 
@@ -107,7 +115,7 @@ public class DataDialogFragment extends DialogFragment {
             }
             Message message = Message.obtain();
             message.what = 0x001;
-            han.sendMessageDelayed(message, 400);
+            han.sendMessageDelayed(message, addTime);
             isAdd = false;
         } else {
             if (myList.size() > 0 && i < myList.size()) {
@@ -115,7 +123,7 @@ public class DataDialogFragment extends DialogFragment {
                 showList.get(0).setWhrite(true);
                 Message message = Message.obtain();
                 message.what = 0x001;
-                han.sendMessageDelayed(message, 400);
+                han.sendMessageDelayed(message, changeColorTime);
                 i++;
                 isAdd = true;
             } else {

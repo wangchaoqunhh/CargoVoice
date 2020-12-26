@@ -24,7 +24,7 @@
                 app:expandedTitleMarginStart="72dp"
                 app:expandedTitleTextAppearance="@style/TitleTheme"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:title="货件信息">
+                app:title="@string/shipment_information">
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -61,7 +61,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="24dp"
-                            android:text="类别:"
+                            android:text=""
                             android:textColor="@color/c101"
                             android:textSize="14sp" />
 
@@ -70,7 +70,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="24dp"
-                            android:text="总数:"
+                            android:text=""
                             android:textColor="@color/c101"
                             android:textSize="14sp" />
 
@@ -107,5 +107,5 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        app:but_text="保存" />
+        app:but_text="@string/save" />
 </RelativeLayout>

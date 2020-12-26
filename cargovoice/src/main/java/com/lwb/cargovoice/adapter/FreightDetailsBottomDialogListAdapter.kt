@@ -78,13 +78,12 @@ class FreightDetailsBottomDialogListAdapter(data: List<Any?>?,
             tvVoyage.text = judgeText(voyageFlightNo)   //航次
             tvDepart.text = judgeText(actualDeparture)
             tvArrive.text = judgeText(actualArrival)
-            tvType.text = "类型：" + judgeText(legType)
-            tvAccept.text = "承运人：" + judgeText(carrierName)
+            tvType.text = mContext.getString(R.string.type) + judgeText(legType)
+            tvAccept.text = mContext.getString(R.string.carrier) + "：" + judgeText(carrierName)
 
             if (transportMode.toUpperCase() == "SEA") ivPlaneOrShip.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.svg_ic_ship_white)) else
                 ivPlaneOrShip.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.svg_ic_plane_white))
-            tvPlaneOrShip.text = transportModeDesc
-
+            tvPlaneOrShip.text = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "transportMode（运输方式）.json", transportMode.toUpperCase()).nameCn
         }
     }
 
@@ -99,9 +98,9 @@ class FreightDetailsBottomDialogListAdapter(data: List<Any?>?,
 
         bean?.apply {
             tvArriveHarbor.text = judgeText(description)
-            tvPredictTime.text = "预计日期:" + judgeText(estimatedDate)
+            tvPredictTime.text = mContext.getString(R.string.estimated_date) + "：" + judgeText(estimatedDate)
             if (!TextUtils.isEmpty(actualDate)) {
-                tvPracticalTime.text = "实际日期:$actualDate"
+                tvPracticalTime.text = mContext.getString(R.string.actual_date) + "：" + actualDate
                 tvPracticalTime.visibility = View.VISIBLE
             } else {
                 tvPracticalTime.visibility = View.GONE
@@ -129,10 +128,10 @@ class FreightDetailsBottomDialogListAdapter(data: List<Any?>?,
         val tv_packaging_number = parent?.findViewById<TextView>(R.id.tv_packaging_number)
         val tv_tv_packaging_type = parent?.findViewById<TextView>(R.id.tv_tv_packaging_type)
         bean?.apply {
-            tv_container_code.text = "集装箱号码：" + judgeText(containerNumber)
+            tv_container_code.text = mContext.getString(R.string.container_number) + "：" + judgeText(containerNumber)
             tv_goods_describe.text = judgeText(goodsDesc)
-            tv_packaging_number.text = "包装数量：" + mContext.fmtMicrometer(packQty)
-            tv_tv_packaging_type.text = "包装类型：" + LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "packageType（包装类型）.json", packTypeCode).nameCn
+            tv_packaging_number.text = mContext.getString(R.string.packing_quantity) + "：" + mContext.fmtMicrometer(packQty)
+            tv_tv_packaging_type.text = mContext.getString(R.string.type_of_packaging) + "：" + LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "packageType（包装类型）.json", packTypeCode).nameCn
         }
     }
 
@@ -158,10 +157,10 @@ class FreightDetailsBottomDialogListAdapter(data: List<Any?>?,
         val tv_time2 = parent?.findViewById<TextView>(R.id.tv_time1)
 
         bean?.apply {
-            tv_container_type.text = "箱型：" + judgeText(containerTypeCode)
+            tv_container_type.text = mContext.getString(R.string.box) + "：" + judgeText(containerTypeCode)
             tv_tv_container_num.text = judgeText(containerNumber)
-            tv_time1.text = "预计重箱提货日期：" + judgeText(departureEstimatedPickup)
-            tv_time2.text = "实际重柜提柜日期：" + judgeText(arrivalCartageComplete)
+            tv_time1.text = mContext.getString(R.string.estimated_heavy_delivery_date) + "：" + judgeText(departureEstimatedPickup)
+            tv_time2.text = mContext.getString(R.string.actual_date_of_heavy_container_withdrawal) + "：" + judgeText(arrivalCartageComplete)
         }
     }
 

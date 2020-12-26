@@ -143,17 +143,17 @@ class EnquiryListActivity : BaseFragmentActivity<EnquiryListContract.View?, Enqu
 
                 override fun onTime() {
                     if (TextUtils.isEmpty(mRequest.businessInfo.transportModeCode)) {
-                        AirToast.showToast("请选择运输方式")
+                        AirToast.showToast(getString(R.string.please_select_shipping_method))
                         return
                     }
                     if (TextUtils.isEmpty(mRequest.locationInfo.portOfOriginName)) {
-                        AirToast.showToast("请选择起运岗和目的岗")
+                        AirToast.showToast(getString(R.string.please_select_starting_post_and_destination_post))
                         return
                     }
                     val dialog = BottomTimeDialog
                             .backSelectTime {
                                 mRequest.locationInfo.departureDate = it?.year + "-" + it?.month + "-" + it?.day
-                                bottomCarriageDialog?.tvETDTime?.setText(it?.year + "年" + it?.month + "月" + it?.day + "日 " + it?.week)
+                                bottomCarriageDialog?.tvETDTime?.setText(it?.year + getString(R.string.year) + it?.month + getString(R.string.month) + it?.day + getString(R.string.day) + it?.week)
                                 //去大表单页
                                 EnquiryAddGoalActivity.launchActivity(mContext)
                                 bottomCarriageDialog?.dismiss()

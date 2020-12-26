@@ -1,0 +1,244 @@
+<resources>
+    <string name="app_name">CargoVoice</string>
+    <!-- 智能语音 -->
+    <string name="volume_close">Voice announcement is off</string>
+    <string name="volume_open">Voice announcement is on</string>
+    <string name="hello">hello</string>
+    <string name="confirm_documents">Auto-filling</string>
+
+    <!-- 登录 -->
+    <string name="error_agree">please check and agree《User Agreement and Privacy Policy》</string>
+    <string name="error_tel">Cell number format error</string>
+    <string name="error_verification">Security code error</string>
+    <string name="get_verification">Get</string>
+    <string name="send_again">Resend</string>
+    <string name="exit_again">Re-press to exit</string>
+    <string name="welcome">Welcome to</string>
+    <string name="telephone">Cell phone</string>
+    <string name="verification">Security code</string>
+    <string name="read_and_agree">I learn and agree</string>
+    <string name="user_service_agreement">《User Agreement and Privacy Policy》</string>
+    <string name="login">Login</string>
+    <!-- 首页 -->
+    <string name="sunday">Sun</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="month">Month</string>
+    <string name="day">Day</string>
+    <string name="week">Week</string>
+    <string name="no_rool">Permission denied</string>
+    <string name="my_enquiry">My Inquiry</string>
+    <string name="my_booking_space">My Booking</string>
+    <string name="my_freight">Cargo Tracking</string>
+    <string name="fast_enquiry">Price Inquiry</string>
+    <string name="fast_booking_space">Quick Booking</string>
+    <string name="bill_query">Statements</string>
+    <string name="cancel_account">Whether to cancel the current account?</string>
+
+    <!-- ________________________________我的询价列表EnquiryListActivity_______________________________________________ -->
+    <string name="container_mode">Container mode</string>
+    <string name="weight">Wt.</string>
+    <string name="volume">Vol</string>
+    <string name="one_click_booking">Booking</string>
+    <string name="please_select_shipping_method">Transport Mode</string>
+    <string name="please_select_starting_post_and_destination_post">Choose POD and POL</string>
+    <string name="year">Year</string>
+    <string name="inquiry_number">Inquiry No.</string>
+
+    <!--___________________________________我的询价详情EnquiryDetailsActivity___________________________________________-->
+    <string name="port_of_departure">POL</string>
+    <string name="destination">POD</string>
+    <string name="shipment_information">Cargo Info</string>
+    <string name="view_all">View all</string>
+    <string name="service_level">Service Level</string>
+    <string name="shipment_service">Transport Services</string>
+    <string name="trade_terms">INCOTERMS</string>
+    <string name="delivery_information">Consignee</string>
+    <string name="consignee">Consignee</string>
+    <string name="contact_name">Contact name</string>
+    <string name="contact_number">Phone</string>
+    <string name="shipping_address">Address</string>
+    <string name="cost_information">Fee</string>
+    <string name="total">Total</string>
+    <string name="box">TYP</string>
+    <string name="container_volume">QTY</string>
+
+    <!-- ________________________________我的订舱列表BookingSpaceListActivity_______________________________________________ -->
+    <string name="container_way">CNTR Mode</string>
+    <string name="booking_order_number">Booking No.</string>
+    <string name="no_booking_order_number">No available Booking</string>
+
+    <!-- ________________________________我的货运列表FreightListActivity_______________________________________________ -->
+    <string name="exit">Export</string>
+    <string name="cargo_import">Import</string>
+    <string name="product_description">Cargo Desc</string>
+    <string name="waybill_number">Waybill No.</string>
+    <string name="no_waybill_number">No available Waybill</string>
+
+    <!-- ________________________________我的货运详情FreightDetailsActivity_______________________________________________ -->
+    <string name="the_total_amount">Total Packages</string>
+    <string name="way_of_delivery">Release type</string>
+    <string name="payment_methods">Payment method </string>
+    <string name="shipment_status">Shipping status</string>
+    <string name="transport_information">Transport Info</string>
+    <string name="date_information">Dates</string>
+    <string name="pick_up">Pickup Info</string>
+    <string name="estimated_delivery_date">Est. Pickup</string>
+    <string name="latest_delivery_date">Latest Pickup</string>
+    <string name="shipping_notification_date">Cartage Advised</string>
+    <string name="actual_delivery_date">Act. Pickup</string>
+    <string name="deliver_the_goods">Delivery Info</string>
+    <string name="latest_delivery_date_later">Latest Delivery</string>
+    <string name="actual_delivery_date2">Act. Delivery</string>
+    <string name="warehouse">Warehouse</string>
+    <string name="pick_up_time">Cargo available</string>
+    <string name="warehousing_start_time">Warehouse rental start time</string>
+    <string name="milestone">Milestone</string>
+    <string name="shipment">Cargo</string>
+    <string name="order_form">Order</string>
+    <string name="container">Container</string>
+    <string name="reference_no">Ref No.</string>
+    <string name="remark">Notes</string>
+    <string name="actual_departure">Act. Departure</string>
+    <string name="actually_arrived">Act. Arrival</string>
+    <string name="odd_number">Order No.:</string>
+    <string name="date">Date:</string>
+    <string name="type">Type:</string>
+    <string name="explanation">Desc:</string>
+    <string name="carrier">Carrier</string>
+    <string name="estimated_date">ETD:</string>
+    <string name="actual_date">Act. Date</string>
+    <string name="container_number">CNTR No.</string>
+    <string name="packing_quantity">Package QTY</string>
+    <string name="type_of_packaging">Packing Type</string>
+    <string name="estimated_heavy_delivery_date">Est. Pickup</string>
+    <string name="actual_date_of_heavy_container_withdrawal">Act. Pickup</string>
+    <string name="waybill_number_has_been_copied">Waybill No. copied</string>
+    <string name="no_bill_of_lading_number">No available Waybill No.</string>
+    <string name="the_bill_of_lading_number_has_been_copied">B/L No. copied</string>
+    <string name="no_milestones">No available milestone</string>
+    <string name="tracking_number">Waybill No.</string>
+
+    <!-- ________________________________我的账单BillListActivity_______________________________________________ -->
+    <string name="my_bill">Statements</string>
+    <string name="open">Outstanding</string>
+    <string name="closed">Cleared</string>
+    <string name="bill_amount">Total Amount (CNY)</string>
+    <string name="outstanding_amount">OS Amount (CNY)</string>
+    <string name="bill_number">STA No</string>
+    <string name="os_total">OS Total(CNY):</string>
+
+
+    <!-- ________________________________添加大页EnquiryAddGoalActivity_______________________________________________ -->
+    <string name="please_select_the_departure_time">Please choose ETD</string>
+    <string name="please_select_the_port_of_departure">Please choose POL</string>
+    <string name="please_select_the_destination_port">Please choose POD</string>
+    <string name="bulk_cargo">LCL</string>
+    <string name="fcl">FCL</string>
+    <string name="shipments_information">Consignor</string>
+    <string name="add_shipper_information">Add Consignor Info</string>
+    <string name="add_consignee_information">Add Consignee Info</string>
+    <string name="submit">Submit</string>
+    <string name="please_choose_a_container">Please choose CNTR Mode</string>
+    <string name="please_add_container_information">Add CNTR Info</string>
+    <string name="please_add_shipment_information">Add Cargo Info</string>
+    <string name="please_select_service_level">Choose Service Level</string>
+    <string name="please_select_trade_terms">Choose INCOTERMS</string>
+    <string name="please_add_shipper_information">Add consignor info</string>
+    <string name="please_add_consignee_information">Add consignee info</string>
+
+
+    <!-- ________________________________添加集装箱页AddContainerActivity______________________________________________ -->
+    <string name="start_shipment">Shipment</string>
+    <string name="save">Save</string>
+    <string name="your_number_of_boxes_has_been_added_to_the_maximum">CNTR QTY max reached</string>
+    <string name="total_number_of_boxes">CNTR Type Total</string>
+    <string name="the_total_number_of_boxes">CNTR Total</string>
+    <string name="please_choose_box_type">Choose CNTR Type</string>
+    <string name="please_enter_the_box_quantity">Choose CNTR QTY</string>
+    <string name="please_enter_the_container_number">Input CNTR No.</string>
+    <string name="zero_box">0 CNTR</string>
+    <string name="soc_box">is SOC</string>
+    <string name="one_box">CNTR</string>
+    <string name="container_num">Container Number</string>
+
+    <!-- ________________________________货件信息列表AddGoodsInfoActivity______________________________________________ -->
+    <string name="category">Category Total</string>
+    <string name="total_num">Package Total</string>
+    <string name="quantity">QTY</string>
+    <string name="dangerous_goods">Dangerous goods</string>
+    <string name="hs_code">HS code</string>
+
+    <!-- ________________________________添加 发货/收货 信息AddHarvestInfoActivity______________________________________________ -->
+    <string name="country_province_city">Country/Province/City</string>
+    <string name="address">Address line</string>
+    <string name="company_name">Consignee Name</string>
+    <string name="postcode">PostCode</string>
+    <string name="please_enter_a_name">Input Consignee Name</string>
+    <string name="please_enter_a_contact">Input Contact Name</string>
+    <string name="please_enter_the_correct_contact_number">Phone No. format error</string>
+    <string name="please_enter_country_province_city">Input Country/Province/City</string>
+    <string name="please_enter_the_detailed_address">Input address line</string>
+
+    <!-- ________________________________添加货件信息 AddGoodsInfoDetailsActivity -->
+    <string name="shipment_category">Cargo Category</string>
+    <string name="shipment_description">Cargo Desc</string>
+    <string name="mark">Mark</string>
+    <string name="dangerous_goods_identification">is Dangerous</string>
+    <string name="dangerous_goods_level">Dangerous Level</string>
+    <string name="please_select_the_shipment_category">Choose Category</string>
+    <string name="please_enter_the_quantity">Input QTY</string>
+    <string name="please_select_the_quantity_unit">Choose QTY Unit</string>
+    <string name="please_enter_the_volume">Input VOL</string>
+    <string name="please_select_volume_unit">Input VOL Unit</string>
+    <string name="please_enter_weight">Input Wt.</string>
+    <string name="please_select_a_weight_unit">Input Wt. Unit</string>
+    <string name="please_enter_the_mark">Input Mark</string>
+    <string name="please_select_the_dangerous_goods_class">Choose Dangerous Level</string>
+    <string name="please_enter_hs_code">Input HS code</string>
+    <string name="add_shipment_information">Add Cargo Info</string>
+
+    <!-- ________________________________选择地址页 SelectRegionActivity -->
+    <string name="please_choose">Please choose</string>
+    <string name="area_select">Region Select</string>
+
+
+    <!-- ________________________________自定义控件需要的-->
+    <string name="address_selection">Address options</string>
+    <string name="add_address">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="determine">Confirm</string>
+    <string name="submitted_successfully">Submit successfully</string>
+    <string name="submission_failed_please_try_again">Submit failed, please try again</string>
+    <string name="submitting_for_you_please_wait_patiently">Submitting, almost there</string>
+    <string name="airlift">Air</string>
+    <string name="oceanShipping">Sea</string>
+    <string name="please_select_the_estimated_departure_time">Choose ETD</string>
+    <string name="goods">Cargo</string>
+    <string name="share_to">Share</string>
+    <string name="wechat">Wechat</string>
+    <string name="mailbox">Mail</string>
+    <string name="link">Hyperlink</string>
+    <string name="your_estimated_departure_date_is">Your ETD is ...</string>
+    <string name="it_s_over">—Bottom—</string>
+    <string name="network_connection_failed_please_reload">Network not available</string>
+    <string name="no_content_yet">None data</string>
+
+    <string name="pull_down_to_refresh">Pull Refresh</string>
+    <string name="Refreshing">Refreshing...</string>
+    <string name="Loading">Loading...</string>
+    <string name="RefreshImmediatelyAfterRelease">Release Refresh</string>
+    <string name="RefreshComplete">Refresh Complete</string>
+    <string name="RefreshFailed">Refresh Failed</string>
+    <string name="LastUpdate">LastUpdate M-d HH:mm</string>
+
+    <string name="PullUpToLoadMore">Pull Load More</string>
+    <string name="ReleaseAndLoadImmediately">Release Load</string>
+    <string name="LoadingCompleted">Loading Completed</string>
+    <string name="FailedToLoad">Failed To Load</string>
+    <string name="NoMoreData">No More Data</string>
+</resources>

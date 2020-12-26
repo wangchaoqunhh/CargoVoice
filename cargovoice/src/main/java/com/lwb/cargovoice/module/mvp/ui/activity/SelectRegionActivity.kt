@@ -58,7 +58,9 @@ class SelectRegionActivity : BaseFragmentActivity<SelectRegionContract.View?, Se
     private var pinyinComparator: PinyinComparator? = null
 
     override fun init() {
-        titleList.add(SelectRegionBean())
+        val title = SelectRegionBean()
+        title.name = getString(R.string.please_choose)
+        titleList.add(title)
         rv_title.adapter = titleAdapter
 
         mPagingView = findViewById(R.id.paging_view)

@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="添加货件信息"
+            android:text="@string/please_add_shipment_information"
             android:textColor="@color/c101" />
 
         <ImageView
@@ -52,7 +52,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="8dp"
             android:gravity="center"
-            android:text="查看全部"
+            android:text="@string/view_all"
             android:textColor="@color/c005"
             android:textSize="14sp" />
     </LinearLayout>

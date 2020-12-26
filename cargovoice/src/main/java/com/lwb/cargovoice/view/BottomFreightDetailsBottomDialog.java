@@ -68,25 +68,25 @@ public class BottomFreightDetailsBottomDialog extends BottomSheetDialogFragment 
         String title = "";
         switch (type) {
             case 1:
-                title = "运输信息";
+                title = getString(R.string.transport_information);
                 break;
             case 2:
-                title = "里程碑";
+                title = getString(R.string.milestone);
                 break;
             case 3:
-                title = "物品";
+                title = getString(R.string.goods);
                 break;
             case 4:
-                title = "订单";
+                title = getString(R.string.order_form);
                 break;
             case 5:
-                title = "集装箱";
+                title = getString(R.string.container);
                 break;
             case 6:
-                title = "参考号";
+                title = getString(R.string.reference_no);
                 break;
             case 7:
-                title = "备注";
+                title = getString(R.string.remark);
                 break;
         }
         this.dialogTitle.setText(title);

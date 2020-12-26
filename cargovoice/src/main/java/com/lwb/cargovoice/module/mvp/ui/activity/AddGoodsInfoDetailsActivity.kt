@@ -30,23 +30,7 @@ class AddGoodsInfoDetailsActivity : BaseFragmentActivity<IView<*>?, IPresenter?>
         showOldData(position)
     }
 
-    private fun showOldData(position: Int) {
-        if (position != -1) {
-            bean = mRequest.commodityList.get(position)
-        } else {
-            //货件类别
-            bean.commodityCode = getJsonListBean(mContext, "commodityType(货件类别).json")?.get(0)?.code
-            bean.commodityDesc = getGsonBeanByFileNameCode(mContext, "commodityType(货件类别).json", bean.commodityCode).nameCn
-            //数量
-            bean.packTypeCode = getJsonListBean(mContext, "packageType（包装类型）.json")?.get(0)?.code
-            bean.packTypeDesc = getGsonBeanByFileNameCode(mContext, "packageType（包装类型）.json", bean.packTypeCode).nameCn
-            //体积
-            bean.volumeUnitCode = getJsonListBean(mContext, "volumeUnit（体积单位）.json")?.get(0)?.code
-            bean.volumeUnitDesc = getGsonBeanByFileNameCode(mContext, "volumeUnit（体积单位）.json", bean.volumeUnitCode).nameCn
-            //重量
-            bean.weightUnitCode = getJsonListBean(mContext, "weightUnit（重量单位）.json")?.get(0)?.code
-            bean.weightUnitDesc = getGsonBeanByFileNameCode(mContext, "weightUnit（重量单位）.json", bean.weightUnitCode).nameCn
-        }
+    private fun initView() {
         val jsonCommodityType =
                 getGsonBeanByFileNameCode(mContext, "commodityType(货件类别).json", bean.commodityCode)
         et_goods_classes.setText(jsonCommodityType.nameCn)
@@ -77,6 +61,26 @@ class AddGoodsInfoDetailsActivity : BaseFragmentActivity<IView<*>?, IPresenter?>
                     bean.imoClass).nameCn)
             ev_hs_code.setText(bean.hsCode)
         }
+    }
+
+    private fun showOldData(position: Int) {
+        if (position != -1) {
+            bean = mRequest.commodityList.get(position)
+        } else {
+            //货件类别
+            bean.commodityCode = getJsonListBean(mContext, "commodityType(货件类别).json")?.get(0)?.code
+            bean.commodityDesc = getGsonBeanByFileNameCode(mContext, "commodityType(货件类别).json", bean.commodityCode).nameCn
+            //数量
+            bean.packTypeCode = getJsonListBean(mContext, "packageType（包装类型）.json")?.get(0)?.code
+            bean.packTypeDesc = getGsonBeanByFileNameCode(mContext, "packageType（包装类型）.json", bean.packTypeCode).nameCn
+            //体积
+            bean.volumeUnitCode = getJsonListBean(mContext, "volumeUnit（体积单位）.json")?.get(0)?.code
+            bean.volumeUnitDesc = getGsonBeanByFileNameCode(mContext, "volumeUnit（体积单位）.json", bean.volumeUnitCode).nameCn
+            //重量
+            bean.weightUnitCode = getJsonListBean(mContext, "weightUnit（重量单位）.json")?.get(0)?.code
+            bean.weightUnitDesc = getGsonBeanByFileNameCode(mContext, "weightUnit（重量单位）.json", bean.weightUnitCode).nameCn
+        }
+        initView()
     }
 
     private fun initListener() {
@@ -194,43 +198,43 @@ class AddGoodsInfoDetailsActivity : BaseFragmentActivity<IView<*>?, IPresenter?>
      */
     private fun isEmptyCheck(): Boolean {
         if (TextUtils.isEmpty(bean.commodityCode)) {
-            AirToast.showToast("请选择货件类别")
+            AirToast.showToast(getString(R.string.please_select_the_shipment_category))
             return true
         }
         if (TextUtils.isEmpty(bean.packQty) || (bean.packQty).toInt() < 1) {
-            AirToast.showToast("请输入数量")
+            AirToast.showToast(getString(R.string.please_enter_the_quantity))
             return true
         }
         if (TextUtils.isEmpty(bean.packTypeCode)) {
-            AirToast.showToast("请选择数量单位")
+            AirToast.showToast(getString(R.string.please_select_the_quantity_unit))
             return true
         }
         if (TextUtils.isEmpty(bean.volume) || (bean.volume).toDouble() <= 0) {
-            AirToast.showToast("请输入体积")
+            AirToast.showToast(getString(R.string.please_enter_the_volume))
             return true
         }
         if (TextUtils.isEmpty(bean.volumeUnitCode)) {
-            AirToast.showToast("请选择体积单位")
+            AirToast.showToast(getString(R.string.please_select_volume_unit))
             return true
         }
         if (TextUtils.isEmpty(bean.weight) || (bean.weight).toDouble() <= 0) {
-            AirToast.showToast("请输入重量")
+            AirToast.showToast(getString(R.string.please_enter_weight))
             return true
         }
         if (TextUtils.isEmpty(bean.weightUnitCode)) {
-            AirToast.showToast("请选择重量单位")
+            AirToast.showToast(getString(R.string.please_select_a_weight_unit))
             return true
         }
         if (TextUtils.isEmpty(bean.mark)) {
-            AirToast.showToast("请输入唛头")
+            AirToast.showToast(getString(R.string.please_enter_the_mark))
             return true
         }
         if (switch_is_danger.isChecked && TextUtils.isEmpty(bean.imoClass)) {
-            AirToast.showToast("请选择危险品等级")
+            AirToast.showToast(getString(R.string.please_select_the_dangerous_goods_class))
             return true
         }
         if (switch_is_danger.isChecked && TextUtils.isEmpty(bean.hsCode)) {
-            AirToast.showToast("请输入HS编码")
+            AirToast.showToast(getString(R.string.please_enter_hs_code))
             return true
         }
         return false

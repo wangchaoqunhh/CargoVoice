@@ -12,7 +12,7 @@ public class SelectRegionBean implements Serializable {
      */
 
     private String code;
-    private String name = "请选择";
+    private String name;
     private String desc;
     private String letters;
 

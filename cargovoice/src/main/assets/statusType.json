@@ -1,0 +1,9 @@
+[
+{"code":"101","nameEn":"Quoting","nameCn":"询价中","isMostUsed":"true"},
+{"code":"102","nameEn":"Quoted","nameCn":"已报价","isMostUsed":"false"},
+{"code":"900","nameEn":"Completed","nameCn":"已完结","isMostUsed":"true"},
+{"code":"201","nameEn":"Booking","nameCn":"订舱中","isMostUsed":"false"},
+{"code":"202","nameEn":"Booked","nameCn":"已订舱","isMostUsed":"false"},
+{"code":"203","nameEn":"Cancelled","nameCn":"已取消","isMostUsed":"false"},
+{"code":"910","nameEn":"Completed","nameCn":"已完结","isMostUsed":"false"}
+]

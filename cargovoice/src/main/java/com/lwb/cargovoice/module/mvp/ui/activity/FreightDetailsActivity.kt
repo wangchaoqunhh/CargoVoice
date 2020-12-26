@@ -7,9 +7,11 @@ import android.text.TextUtils
 import android.view.View
 import android.view.ViewGroup
 import com.cargo.basecommon.base.BaseFragmentActivity
+import com.cargo.basecommon.constant.Constant
 import com.cargo.basecommon.utils.AirToast
 import com.cargo.basecommon.utils.CopyTextUtil
 import com.cargo.basecommon.utils.ListUtils
+import com.cargo.basecommon.utils.LocalJsonResolutionUtils
 import com.lwb.cargovoice.R
 import com.lwb.cargovoice.adapter.FreightDetailsBottomDialogListAdapter
 import com.lwb.cargovoice.module.mvp.contract.FreightDetailsContract
@@ -32,7 +34,7 @@ class FreightDetailsActivity : BaseFragmentActivity<FreightDetailsContract.View?
 
     private fun initListener() {
         iv_share.setOnClickListener {
-            CopyTextUtil.putTextIntoClip(mContext, mResponse?.forwardingShptNumber, "运单号已复制")
+            CopyTextUtil.putTextIntoClip(mContext, mResponse?.forwardingShptNumber, getString(R.string.waybill_number_has_been_copied))
         }
 
         toolbar.setNavigationOnClickListener {
@@ -41,18 +43,18 @@ class FreightDetailsActivity : BaseFragmentActivity<FreightDetailsContract.View?
 
         iv_copy_code.setOnClickListener {
             if (TextUtils.isEmpty(mResponse?.forwardingShptNumber)) {
-                AirToast.showToast("暂无运单号")
+                AirToast.showToast(getString(R.string.no_waybill_number))
                 return@setOnClickListener
             }
-            CopyTextUtil.putTextIntoClip(mContext, mResponse?.forwardingShptNumber, "运单号已复制")
+            CopyTextUtil.putTextIntoClip(mContext, mResponse?.forwardingShptNumber, getString(R.string.waybill_number_has_been_copied))
         }
 
         iv_bill_code_copy.setOnClickListener {
             if (TextUtils.isEmpty(mResponse?.wayBillNumber)) {
-                AirToast.showToast("暂无提单号码")
+                AirToast.showToast(getString(R.string.no_bill_of_lading_number))
                 return@setOnClickListener
             }
-            CopyTextUtil.putTextIntoClip(mContext, mResponse?.wayBillNumber, "提单号码已复制")
+            CopyTextUtil.putTextIntoClip(mContext, mResponse?.wayBillNumber, getString(R.string.the_bill_of_lading_number_has_been_copied))
         }
     }
 
@@ -72,24 +74,25 @@ class FreightDetailsActivity : BaseFragmentActivity<FreightDetailsContract.View?
         this.mResponse = response
         response?.apply {
             //里程碑状态
-            toolbar.title = if (TextUtils.isEmpty(lastestMilestoneDesc)) "暂无里程碑" else lastestMilestoneDesc
-            tv_code.text = "运单号：$forwardingShptNumber"
-            tv_bill_code.text = "提单号码：$wayBillNumber"
+            toolbar.title = if (TextUtils.isEmpty(lastestMilestoneDesc)) getString(R.string.no_milestones) else lastestMilestoneDesc
+            tv_code.text = getString(R.string.waybill_number) + "：" + forwardingShptNumber
+            tv_bill_code.text = getString(R.string.tracking_number) + "：" + wayBillNumber
 
             iv_plane_or_ship.setImageDrawable(if (transportModeCode == "SEA") ContextCompat.getDrawable(mContext, R.drawable.svg_ic_ship_white) else
                 ContextCompat.getDrawable(mContext, R.drawable.svg_ic_plane_white))
-            tv_plane_or_ship.text = transportModeDesc
-            tv_server.text = serviceLevelDesc
+            tv_plane_or_ship.text = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "transportMode（运输方式）.json", transportModeCode).nameCn
+            tv_server.text = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "serviceLevel（服务级别）.json", serviceLevelCode).nameCn
 
             tv_origin.text = "$portOfOriginName($portOfOriginCode)"
             tv_origin_time.text = "ETD " + if (TextUtils.isEmpty(etd)) "-" else etd
             tv_terminus.text = "$portOfDestinationName($portOfDestinationCode)"
             tv_terminus_time.text = "ETA " + if (TextUtils.isEmpty(eta)) "-" else eta
 
-            sv_sum.setLeft(fmtMicrometer(outerPacks) + outerPacksPackageTypeDesc)
+            sv_sum.setLeft(fmtMicrometer(outerPacks) + LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "packageType（包装类型）.json", outerPacksPackageTypeCode).nameCn)
             sv_volume.setLeft(fmtMicrometer(totalVolume) + totalVolumeUnitCode)
             sv_weight.setLeft(fmtMicrometer(totalWeight) + totalWeightUnitCode)
-            sv_container_mode.setLeft(containerModeDesc)
+            val containerMode = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "containerMode（装箱方式）.json", containerModeCode)
+            sv_container_mode.setLeft(if (Constant.isEnglist) containerMode.code else containerMode.nameCn)
             sv_release_mode.setLeft(releaseTypeDesc)
             sv_pay_mode.setLeft(hblawbChargesDisplayDesc)
             sv_lading_state.setLeft(shippedOnBoardDesc)

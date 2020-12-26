@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/c100"
         android:elevation="8dp"
-        app:title="收货信息" />
+        app:title="@string/delivery_information" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:ellipsize="end"
                 android:focusable="false"
                 android:gravity="center_vertical"
-                android:hint="国家/省/市"
+                android:hint="@string/country_province_city"
                 android:minHeight="48dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="30dp"
@@ -64,7 +64,7 @@
             android:layout_weight="1"
             android:background="@drawable/cargovoice_shape_r8dp_c128"
             android:gravity="top"
-            android:hint="详细地址"
+            android:hint="@string/address"
             android:minHeight="96dp"
             android:paddingStart="16dp"
             android:paddingTop="16dp"
@@ -80,7 +80,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/cargovoice_shape_r8dp_c128"
             android:ellipsize="end"
-            android:hint="名称"
+            android:hint="@string/company_name"
             android:inputType="text"
             android:maxLines="1"
             android:paddingStart="16dp"
@@ -103,7 +103,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cargovoice_shape_r8dp_c128"
                 android:ellipsize="end"
-                android:hint="联系人"
+                android:hint="@string/contact_name"
                 android:inputType="text"
                 android:maxLines="1"
                 android:paddingStart="16dp"
@@ -121,7 +121,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/cargovoice_shape_r8dp_c128"
                 android:ellipsize="end"
-                android:hint="联系电话"
+                android:hint="@string/contact_number"
                 android:inputType="number"
                 android:maxLines="1"
                 android:paddingStart="16dp"
@@ -139,7 +139,7 @@
             android:layout_weight="1"
             android:background="@drawable/cargovoice_shape_r8dp_c128"
             android:gravity="center_vertical"
-            android:hint="邮编"
+            android:hint="@string/postcode"
             android:inputType="number"
             android:paddingStart="16dp"
             android:textColor="@color/c101"
@@ -156,7 +156,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        app:but_text="保存" />
+        app:but_text="@string/save" />
 
 
 </RelativeLayout>

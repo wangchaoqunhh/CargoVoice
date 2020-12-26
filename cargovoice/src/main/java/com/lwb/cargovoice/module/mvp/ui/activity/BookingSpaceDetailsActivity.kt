@@ -10,9 +10,11 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.cargo.basecommon.base.BaseFragmentActivity
+import com.cargo.basecommon.constant.Constant
 import com.cargo.basecommon.utils.AirToast
 import com.cargo.basecommon.utils.CopyTextUtil
 import com.cargo.basecommon.utils.ListUtils
+import com.cargo.basecommon.utils.LocalJsonResolutionUtils
 import com.cargo.basecommon.utils.TimeUtils.stampToDateTime
 import com.lwb.cargovoice.R
 import com.lwb.cargovoice.adapter.GoodsInfoAdapter3
@@ -35,7 +37,7 @@ class BookingSpaceDetailsActivity : BaseFragmentActivity<BookingSpaceDetailsCont
 
         iv_copy.setOnClickListener {
             if (TextUtils.isEmpty(mResponse?.basicInfo?.ibookingNo)) {
-                AirToast.showToast("暂无订舱单号")
+                AirToast.showToast(getString(R.string.no_booking_order_number))
                 return@setOnClickListener
             }
             CopyTextUtil.putTextIntoClip(mContext, mResponse?.basicInfo?.ibookingNo)
@@ -66,9 +68,9 @@ class BookingSpaceDetailsActivity : BaseFragmentActivity<BookingSpaceDetailsCont
             //询价信息
             val basicInfo = response.basicInfo
             basicInfo.apply {
-                tv_code.text = "订舱单号： " + if (TextUtils.isEmpty(ibookingNo)) "-" else ibookingNo
+                tv_code.text = getString(R.string.booking_order_number) + ":" + if (TextUtils.isEmpty(ibookingNo)) "-" else ibookingNo
                 tv_enquiry_time.text = if (TextUtils.isEmpty(ibookingCreateTime)) "-" else stampToDateTime(ibookingCreateTime.toLong())
-                toolbar.title = statusDesc
+                toolbar.title = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "statusType.json", status).nameCn
 //            tv_money.text = "￥" + quotedPrice
             }
 
@@ -83,7 +85,7 @@ class BookingSpaceDetailsActivity : BaseFragmentActivity<BookingSpaceDetailsCont
             //业务类型
             var businessInfo = response.businessInfo
             businessInfo.apply {
-                tv_plane_or_ship.text = transportModeDesc
+                tv_plane_or_ship.text = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "transportMode（运输方式）.json", transportModeCode).nameCn
                 iv_plane_or_ship.setImageDrawable(ContextCompat.getDrawable(mContext, if (transportModeCode == "SEA") R.drawable.svg_ic_ship_white else R.drawable.svg_ic_plane_white))
             }
 
@@ -96,8 +98,9 @@ class BookingSpaceDetailsActivity : BaseFragmentActivity<BookingSpaceDetailsCont
                     val bean = containerList.get(i);
                     val tvContainerMode = view.findViewById<TextView>(R.id.tv_container_mode)
                     val tvContainerNum = view.findViewById<TextView>(R.id.tv_container_num)
-                    tvContainerMode.text = "箱型：" + bean.containerTypeDesc
-                    tvContainerNum.text = "箱量：" + fmtMicrometer(bean.containerCount)
+                    val containerType = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "containerType（箱型）.json", bean.containerTypeCode)
+                    tvContainerMode.text = getString(R.string.box) + ":" + if (Constant.isEnglist) containerType.code else containerType.nameCn
+                    tvContainerNum.text = getString(R.string.container_volume) + ":" + fmtMicrometer(bean.containerCount)
                     if (i == containerList.size - 1) {
                         view.findViewById<View>(R.id.view_line).visibility = View.GONE
                     }
@@ -121,8 +124,8 @@ class BookingSpaceDetailsActivity : BaseFragmentActivity<BookingSpaceDetailsCont
             //运输服务
             var transportService = response.transportService
             transportService.apply {
-                sv_serve_rank.setLeft(serviceLevelDesc)
-                sv_serve_clause.setLeft(incoTermDesc)
+                sv_serve_rank.setLeft(LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "serviceLevel（服务级别）.json", serviceLevelCode).nameCn)
+                sv_serve_clause.setLeft(LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "incoTerm（贸易条款）.json", incoTermCode).nameCn)
             }
             //关联人 （收货人）
             var organizationList = response.organizationList

@@ -23,8 +23,8 @@ import java.util.TimerTask;
 
 public class AddSuccessDialog extends DialogFragment {
 
-    private String succeedText = "提交成功";
-    private String failText = "提交失败,请重新尝试";
+    private String succeedText;
+    private String failText;
 
     private CountDownFinishListener mCountDownFinishListener;
     private TextView mMessage;
@@ -51,6 +51,9 @@ public class AddSuccessDialog extends DialogFragment {
         mIvImg = view.findViewById(R.id.iv_img);
         mPbv = view.findViewById(R.id.pbv);
         mMessage = view.findViewById(R.id.tv_message);
+
+        succeedText = getString(R.string.submitted_successfully);
+        failText = getString(R.string.submission_failed_please_try_again);
         return view;
     }
 

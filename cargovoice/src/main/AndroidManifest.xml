@@ -39,14 +39,7 @@
         <activity android:name=".module.mvp.ui.activity.EnquiryAddGoalActivity" />
         <!--询价详情-->
         <activity android:name=".module.mvp.ui.activity.EnquiryDetailsActivity" />
-        <activity android:name=".module.mvp.ui.activity.MainActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
+        <activity android:name=".module.mvp.ui.activity.MainActivity" />
         <!--智能语音-->
         <activity
             android:name=".module.mvp.ui.activity.AIActivity"

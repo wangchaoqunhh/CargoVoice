@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="@color/c100"
         android:elevation="8dp"
-        app:title="我的账单" />
+        app:title="@string/my_bill" />
 
     <LinearLayout
         android:id="@+id/ll_exit_import"
@@ -22,23 +22,27 @@
 
         <TextView
             android:id="@+id/tv_unsettled_account"
-            android:layout_width="68dp"
+            android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_marginStart="24dp"
             android:background="@drawable/cargovoice_select_r16dp_c128_c005"
             android:gravity="center"
-            android:text="未结"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/open"
             android:textColor="@color/c101"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_closed_account"
-            android:layout_width="68dp"
+            android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/cargovoice_select_r16dp_c128_c005"
             android:gravity="center"
-            android:text="已结"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/closed"
             android:textColor="@color/c101"
             android:textSize="14sp" />
 
@@ -53,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:alpha="0.6"
                 android:gravity="center"
-                android:text="未结总计(CNY)："
+                android:text="@string/os_total"
                 android:textColor="@color/c101"
                 android:textSize="12sp" />
 
@@ -61,7 +65,9 @@
                 android:id="@+id/tv_prices"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
                 android:gravity="center"
+                android:maxLines="1"
                 android:text=""
                 android:textColor="@color/c101"
                 android:textSize="12sp" />

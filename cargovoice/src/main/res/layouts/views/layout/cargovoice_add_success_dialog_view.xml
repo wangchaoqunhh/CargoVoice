@@ -34,7 +34,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginBottom="24dp"
             android:gravity="center_horizontal"
-            android:text="正在为您提交，请耐心等待…"
+            android:text="@string/submitting_for_you_please_wait_patiently"
             android:textColor="@color/c101"
             android:textSize="14dp" />
     </LinearLayout>

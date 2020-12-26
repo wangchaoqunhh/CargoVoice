@@ -1,6 +1,7 @@
 package com.cargo.login.module.mvp.ui.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -29,11 +30,13 @@ import com.cargo.basecommon.utils.AirToast;
 import com.cargo.basecommon.utils.InputMethodUtil;
 import com.cargo.basecommon.utils.MatchUtil;
 import com.cargo.basecommon.utils.SPUtils;
+import com.cargo.basecommon.utils.languageUtils.LanguageType;
 import com.cargo.login.R;
 import com.cargo.login.R2;
 import com.cargo.login.module.mvp.contract.LoginContract;
 import com.cargo.login.module.mvp.entity.request.HolderBean;
 import com.cargo.login.module.mvp.presenter.LoginPresenter;
+import com.cargo.login.module.mvp.ui.fragment.LanguageDialogFragment;
 import com.cargo.login.module.mvp.ui.fragment.LogoutDialogFragment;
 import com.cargo.login.view.BottomHolderDialog;
 
@@ -135,6 +138,7 @@ public class MainActivity extends BaseFragmentActivity<LoginContract.View, Login
 
     }
 
+    @SuppressLint("SetTextI18n")
     private void initTime() {
         Calendar calendar = Calendar.getInstance();
         //月
@@ -162,28 +166,26 @@ public class MainActivity extends BaseFragmentActivity<LoginContract.View, Login
         String weekStr = "";
         switch (week) {
             case 1:
-                weekStr = "日";
+                weekStr = getString(R.string.sunday);
                 break;
             case 2:
-                weekStr = "一";
+                weekStr = getString(R.string.monday);
                 break;
             case 3:
-                weekStr = "二";
+                weekStr = getString(R.string.tuesday);
                 break;
             case 4:
-                weekStr = "三";
+                weekStr = getString(R.string.wednesday);
                 break;
             case 5:
-                weekStr = "四";
+                weekStr = getString(R.string.thursday);
                 break;
             case 6:
-                weekStr = "五";
+                weekStr = getString(R.string.friday);
                 break;
             case 7:
-                weekStr = "六";
+                weekStr = getString(R.string.saturday);
                 break;
-
-
         }
         tvTime.setText(hourStr + ":" + minuteStr);
         //上下午
@@ -192,7 +194,51 @@ public class MainActivity extends BaseFragmentActivity<LoginContract.View, Login
         } else {
             tvApm.setText("PM");
         }
-        tvDate.setText(month + "月" + day + "日 星期" + weekStr);
+        if (SPUtils.get(mContext, "language", "CN").equals("CN")) {
+            tvDate.setText(month + getString(R.string.month) + day + getString(R.string.day) + " " + getString(R.string.week) + weekStr);
+        } else {
+            String monthStr = "";
+            switch (month) {
+                case 1:
+                    monthStr = "Jan";
+                    break;
+                case 2:
+                    monthStr = "Feb";
+                    break;
+                case 3:
+                    monthStr = "Mar";
+                    break;
+                case 4:
+                    monthStr = "Apr";
+                    break;
+                case 5:
+                    monthStr = "May";
+                    break;
+                case 6:
+                    monthStr = "Jun";
+                    break;
+                case 7:
+                    monthStr = "Jul";
+                    break;
+                case 8:
+                    monthStr = "Aug";
+                    break;
+                case 9:
+                    monthStr = "Sept";
+                    break;
+                case 10:
+                    monthStr = "Oct";
+                    break;
+                case 11:
+                    monthStr = "Oct";
+                    break;
+                case 12:
+                    monthStr = "Dec";
+                    break;
+            }
+            tvDate.setText(monthStr + " " + day + "th," + weekStr);
+        }
+
     }
 
     @Override
@@ -260,9 +306,24 @@ public class MainActivity extends BaseFragmentActivity<LoginContract.View, Login
     }
 
     @OnClick({R2.id.ll_my_enquiry, R2.id.ll_my_booking_space, R2.id.ll_my_freight,
-            R2.id.ll_fast_enquiry, R2.id.ll_fast_booking_space, R2.id.ll_bill_query, R2.id.cv_record})
+            R2.id.ll_fast_enquiry, R2.id.ll_fast_booking_space, R2.id.ll_bill_query, R2.id.cv_record, R2.id.iv_language})
     public void onViewClicked(View view) {
         int i = view.getId();
+        if (i == R.id.iv_language) {
+            LanguageDialogFragment dialogFragment = LanguageDialogFragment.newInstance();
+            dialogFragment.setOnLanguageChangeListener(new LanguageDialogFragment.OnLanguageChangeListener() {
+                @Override
+                public void onLanguageChange(String simplifiedChinese) {
+                    if (LanguageType.CHINESE.getLanguage().equals(simplifiedChinese)){
+                        //中文
+                        SPUtils.put(mContext,"language","CN");
+                    }else{
+                        SPUtils.put(mContext,"language","UK");
+                    }
+                }
+            });
+            dialogFragment.show(getSupportFragmentManager(), "dialog");
+        }
         //我的询价
         if (i == R.id.ll_my_enquiry) {
             ARouter.getInstance()
@@ -318,7 +379,7 @@ public class MainActivity extends BaseFragmentActivity<LoginContract.View, Login
                 if (permission != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(this, new String[]
                             {Manifest.permission.RECORD_AUDIO}, 0x0010);
-                }else{
+                } else {
                     ARouter.getInstance()
                             .build("/cargovoice/AIActivity")
                             .navigation();
@@ -342,7 +403,7 @@ public class MainActivity extends BaseFragmentActivity<LoginContract.View, Login
                     .navigation();
         } else {
             Log.e("李文博", "error权限缺失");
-            AirToast.showToast("权限缺失");
+            AirToast.showToast(getString(R.string.no_rool));
 //            finish();
         }
         return;

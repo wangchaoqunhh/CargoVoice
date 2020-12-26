@@ -52,25 +52,6 @@ public interface LoginApi {
     @POST("api-uaa/oauth/mobile/postauth")
     Observable<BaseResponse<LoginResponse>> getOfficialToken(@Query("mobile")String mobile);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * 忘记密码
      * @param request

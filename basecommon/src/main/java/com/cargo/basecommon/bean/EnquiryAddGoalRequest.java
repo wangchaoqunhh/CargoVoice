@@ -129,8 +129,8 @@ public class EnquiryAddGoalRequest {
          */
         private String containerModeCode;
         private String containerModeDesc;
-        private String transportModeCode = "AIR";
-        private String transportModeDesc = "空运";
+        private String transportModeCode;
+        private String transportModeDesc;
 
         public String getContainerModeCode() {
             return containerModeCode;

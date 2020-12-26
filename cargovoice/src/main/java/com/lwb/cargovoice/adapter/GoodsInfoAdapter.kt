@@ -19,23 +19,23 @@ class GoodsInfoAdapter(data: List<EnquiryDetailsResponse.CommodityListBean?>?) :
             helper.setText(R.id.tv_goods_describe1, if (TextUtils.isEmpty(goodsDesc)) "-" else goodsDesc)
 
             //拼接三连
-            var joint = "数量：" + mContext.fmtMicrometer(packQty) + packTypeDesc +
-                    " 体积：" + mContext.fmtMicrometer(volume) + volumeUnitDesc +
-                    " 重量：" + mContext.fmtMicrometer(weight) + weightUnitDesc
+            var joint = mContext.getString(R.string.quantity) +"：" +mContext.fmtMicrometer(packQty) + LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "packageType（包装类型）.json", packTypeCode).nameCn +
+                    "  " + mContext.getString(R.string.volume) + "：" + mContext.fmtMicrometer(volume) + LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "volumeUnit（体积单位）.json", volumeUnitCode).nameCn +
+                    "  " + mContext.getString(R.string.weight) + "：" + mContext.fmtMicrometer(weight) + LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "weightUnit（重量单位）.json", weightUnitCode).nameCn
             helper.setText(R.id.tv_num1, joint)
 //            helper.setText(R.id.tv_volume1, "体积：$volume$volumeUnitDesc")
 //            helper.setText(R.id.tv_weight1, "重量：$weight$weightUnitDesc")
 
             helper.setText(R.id.tv_location1, if (TextUtils.isEmpty(mark)) "-" else mark)
             if (TextUtils.isEmpty(imoClass)) {
-                helper.setText(R.id.tv_1, "危险品：-")
+                helper.setText(R.id.tv_1, mContext.getString(R.string.dangerous_goods) + "：-")
             } else {
-                helper.setText(R.id.tv_1, "危险品：$imoClass")
+                helper.setText(R.id.tv_1, mContext.getString(R.string.dangerous_goods) + "：$imoClass")
             }
             if (TextUtils.isEmpty(hsCode)) {
-                helper.setText(R.id.tv_code1, "HS编码：-")
+                helper.setText(R.id.tv_code1, mContext.getString(R.string.hs_code) + "：-")
             } else {
-                helper.setText(R.id.tv_code1, "HS编码：$hsCode")
+                helper.setText(R.id.tv_code1, mContext.getString(R.string.hs_code) + "：$hsCode")
             }
         }
     }

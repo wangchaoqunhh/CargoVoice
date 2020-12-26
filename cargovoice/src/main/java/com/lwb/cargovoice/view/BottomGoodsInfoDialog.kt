@@ -52,7 +52,7 @@ object BottomGoodsInfoDialog : BottomSheetDialogFragment() {
      * @param
      */
     private fun initAdapter(list: List<*>?) {
-        dialogTitle!!.text = "货件信息"
+        dialogTitle?.text = getString(R.string.shipment_information)
         if(!ListUtils.isEmpty(list)){
             val adapter = GoodsInfoAdapter((list as List<EnquiryDetailsResponse.CommodityListBean?>?))
             rv?.adapter = adapter

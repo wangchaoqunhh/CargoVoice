@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:background="@color/c100"
             android:elevation="8dp"
-            app:title="我的订舱" />
+            app:title="@string/my_booking_space" />
 
         <com.cargo.basecommon.view.PagingView
             android:id="@+id/paging_view"

@@ -129,7 +129,7 @@
                     android:layout_height="48dp">
 
                     <LinearLayout
-                        android:layout_width="92dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:layout_centerVertical="true"
                         android:background="@drawable/cargovoice_shape_r18dp_c005"
@@ -147,6 +147,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:text=""
+                            android:layout_marginEnd="20dp"
                             android:textColor="@color/c101"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -215,7 +216,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:alpha="0.6"
-                                android:text="起运港"
+                                android:text="@string/port_of_departure"
                                 android:textColor="@color/c101"
                                 android:textSize="12sp" />
 
@@ -276,7 +277,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:alpha="0.6"
-                                android:text="目的港"
+                                android:text="@string/destination"
                                 android:textColor="@color/c101"
                                 android:textSize="12sp" />
 
@@ -310,7 +311,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="货件信息"
+                    android:text="@string/shipment_information"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -328,7 +329,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="查看全部"
+                    android:text="@string/view_all"
                     android:textColor="@color/c005"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -348,7 +349,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="运输服务"
+                    android:text="@string/shipment_service"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -356,13 +357,13 @@
                     android:id="@+id/sv_serve_rank"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="服务级别" />
+                    app:sv_name="@string/service_level" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_serve_clause"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="贸易条款" />
+                    app:sv_name="@string/trade_terms" />
             </LinearLayout>
 
             <LinearLayout
@@ -380,7 +381,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="收货信息"
+                    android:text="@string/delivery_information"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -388,19 +389,19 @@
                     android:id="@+id/sv_consignee"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="收货人" />
+                    app:sv_name="@string/consignee" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_linkman"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="联系人姓名" />
+                    app:sv_name="@string/contact_name" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="联系电话" />
+                    app:sv_name="@string/contact_number" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -414,7 +415,7 @@
                         android:ellipsize="end"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="收货地址"
+                        android:text="@string/shipping_address"
                         android:textColor="@color/c101"
                         android:textSize="14sp" />
 
@@ -422,7 +423,7 @@
                         android:id="@+id/tv_take_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="90dp"
+                        android:layout_marginStart="120dp"
                         android:minHeight="48dp"
                         android:paddingTop="14dp"
                         android:text=""
@@ -459,7 +460,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="费用信息"
+                    android:text="@string/cost_information"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -498,7 +499,7 @@
                         android:layout_toLeftOf="@id/tv_sum_money"
                         android:alpha="0.6"
                         android:gravity="center"
-                        android:text="总计"
+                        android:text="@string/total"
                         android:textColor="@color/c101"
                         android:textSize="14sp" />
                 </RelativeLayout>
@@ -513,7 +514,7 @@
                 android:layout_marginEnd="12dp"
                 android:layout_marginBottom="16dp"
                 android:visibility="gone"
-                app:but_text="一键订舱" />
+                app:but_text="@string/one_click_booking" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

@@ -71,10 +71,10 @@ public class AddContainerView extends LinearLayout {
         this.num = num;
 
         if (!TextUtils.isEmpty(type)) {
-            this.mTvContainerType.setText("箱型总数:" + type);
+            this.mTvContainerType.setText(mContext.getString(R.string.total_number_of_boxes) + ":" + type);
         }
         if (!TextUtils.isEmpty(num)) {
-            this.mTvContainerNum.setText("总箱数:" + fmtMicrometer(mContext, num));
+            this.mTvContainerNum.setText(mContext.getString(R.string.the_total_number_of_boxes) + ":" + fmtMicrometer(mContext, num));
         }
         settingShow();
         return this;

@@ -40,7 +40,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="空运"
+                android:text="@string/airlift"
                 android:textColor="@color/c101"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="海运"
+                android:text="@string/oceanShipping"
                 android:textColor="@color/c101"
                 android:textSize="16dp" />
         </LinearLayout>

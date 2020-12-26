@@ -49,7 +49,7 @@ class AddOriginActivity : BaseActivity<IView<*>, IPresenter>() {
             if (rl_origin.isSelected) {
                 mRequest.locationInfo.portOfOriginCode = item[0] as String
                 mRequest.locationInfo.portOfOriginName = item[1] as String
-                et_origin.setText("从「" + mRequest.locationInfo.portOfOriginName + "」起运")
+                et_origin.setText("从「" + mRequest.locationInfo.portOfOriginName + "」" + getString(R.string.start_shipment))
 
                 rl_origin.isSelected = false
                 rl_destination.isSelected = true
@@ -58,11 +58,11 @@ class AddOriginActivity : BaseActivity<IView<*>, IPresenter>() {
 
                 et_origin.visibility = View.GONE
                 ll_origin.visibility = View.VISIBLE
-                tv_origin.text = "从「" + mRequest.locationInfo.portOfOriginName + "」起运"
+                tv_origin.text = "从「" + mRequest.locationInfo.portOfOriginName + "」" + getString(R.string.start_shipment)
 
             } else if (rl_destination.isSelected) {
                 if (TextUtils.isEmpty(et_origin.text) || TextUtils.isEmpty(mRequest.locationInfo.portOfOriginName)) {
-                    AirToast.showToast("请先选择起运港")
+                    AirToast.showToast(getString(R.string.please_select_the_port_of_departure))
                     return@setOnItemClickListener
                 }
 
@@ -161,7 +161,7 @@ class AddOriginActivity : BaseActivity<IView<*>, IPresenter>() {
 
         et_origin.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s != null && !s?.toString()!!.contains("起运")) {
+                if (s != null && !s?.toString()!!.contains(getString(R.string.start_shipment))) {
                     mAdapter?.containsText = s.toString()
                     mAdapter.notifyDataSetChanged()
                 }
@@ -176,7 +176,7 @@ class AddOriginActivity : BaseActivity<IView<*>, IPresenter>() {
 
         et_destination.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s != null && !s?.toString()!!.contains("起运")) {
+                if (s != null && !s?.toString()!!.contains(getString(R.string.start_shipment))) {
                     mAdapter?.containsText = s.toString()
                     mAdapter.notifyDataSetChanged()
                 }

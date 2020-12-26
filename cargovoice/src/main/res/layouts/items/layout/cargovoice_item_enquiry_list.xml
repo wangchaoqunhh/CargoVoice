@@ -222,7 +222,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.6"
-                android:text="装箱方式"
+                android:text="@string/container_mode"
                 android:textColor="@color/c101"
                 android:textSize="12sp" />
 
@@ -231,6 +231,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:ellipsize="middle"
+                android:singleLine="true"
                 android:text=""
                 android:textColor="@color/c101"
                 android:textSize="14sp" />
@@ -256,7 +258,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.6"
-                android:text="重量"
+                android:text="@string/weight"
                 android:textColor="@color/c101"
                 android:textSize="12sp" />
 
@@ -292,7 +294,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.6"
-                android:text="体积"
+                android:text="@string/volume"
                 android:textColor="@color/c101"
                 android:textSize="12sp" />
 
@@ -320,7 +322,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cargovoice_click_r8dp_c005"
         android:gravity="center"
-        android:text="一键订舱"
+        android:text="@string/one_click_booking"
         android:textColor="@color/c101"
         android:textSize="14sp" />
 

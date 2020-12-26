@@ -124,7 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:alpha="0.6"
-                        android:text="集装方式"
+                        android:text="@string/container_way"
                         android:textColor="@color/c101"
                         android:textSize="12sp" />
 
@@ -133,6 +133,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:ellipsize="middle"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
                         android:text=""
                         android:textColor="@color/c101"
                         android:textSize="14sp" />
@@ -156,7 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:alpha="0.6"
-                        android:text="重量"
+                        android:text="@string/weight"
                         android:textColor="@color/c101"
                         android:textSize="12sp" />
 
@@ -189,7 +192,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:alpha="0.6"
-                        android:text="体积"
+                        android:text="@string/volume"
                         android:textColor="@color/c101"
                         android:textSize="12sp" />
 

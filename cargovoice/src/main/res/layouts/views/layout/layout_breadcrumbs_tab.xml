@@ -14,7 +14,7 @@
         android:ellipsize="end"
         android:maxLength="30"
         android:maxLines="1"
-        android:text="请选择"
+        android:text="@string/please_choose"
         android:textColor="@color/c005"
         android:textSize="14sp" />
 

@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
-            android:text="添加集装箱信息"
+            android:text="@string/please_add_container_information"
             android:textColor="@color/c101"
             android:textSize="14sp" />
 
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="集装箱"
+                android:text="@string/container"
                 android:textColor="@color/c101"
                 android:textSize="18sp" />
 

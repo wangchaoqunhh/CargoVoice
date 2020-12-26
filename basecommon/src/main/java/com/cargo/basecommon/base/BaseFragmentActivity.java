@@ -6,20 +6,27 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.cargo.basecommon.utils.languageUtils.LanguageUtil;
+import com.cargo.basecommon.utils.languageUtils.SpUtil;
+
 import butterknife.ButterKnife;
 
-public abstract class BaseFragmentActivity <V extends IView,P extends IPresenter> extends FragmentActivity {
+public abstract class BaseFragmentActivity<V extends IView, P extends IPresenter> extends FragmentActivity {
 
     protected P mPresenter;
     protected Context mContext;
+    public Bundle mSavedInstanceState;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mSavedInstanceState = savedInstanceState;
         int layout = setLayout();
         if (layout != 0) {
             // 默认禁止屏幕旋转一直保持竖屏状态
@@ -29,11 +36,12 @@ public abstract class BaseFragmentActivity <V extends IView,P extends IPresenter
         mContext = this;
         ButterKnife.bind(this);
         initPresenter();
-        if (mPresenter != null){
+        if (mPresenter != null) {
             mPresenter.onCreate();
-            mPresenter.attachView((V)this);
+            mPresenter.attachView((V) this);
         }
         init();
+        Log.e("创建了Activity", this.getClass().getName());
     }
 
     protected abstract void init();
@@ -82,6 +90,23 @@ public abstract class BaseFragmentActivity <V extends IView,P extends IPresenter
             InputMethodManager manager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             manager.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
         }
+    }
+
+    /**
+     * 此方法先于 onCreate()方法执行
+     *
+     * @param newBase
+     */
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //获取我们存储的语言环境 比如 "en","zh",等等
+        String language = SpUtil.getInstance(this).getString(SpUtil.LANGUAGE);
+        /**
+         * attach对应语言环境下的context
+         */
+        super.attachBaseContext(LanguageUtil.attachBaseContext(newBase, language));
+        //改变isEnglish 和 pagingView
+        LanguageUtil.updateData(newBase,language);
     }
 }
 

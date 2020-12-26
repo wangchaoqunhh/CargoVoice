@@ -42,7 +42,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="空运"
+                android:text="@string/airlift"
                 android:textColor="@color/c101"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -67,7 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="海运"
+                android:text="@string/oceanShipping"
                 android:textColor="@color/c101"
                 android:textSize="16dp" />
         </LinearLayout>
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:focusable="false"
-                android:hint="请输入起运港"
+                android:hint="@string/please_select_the_port_of_departure"
                 android:textColor="@color/c101"
                 android:textColorHint="@color/c101_0.6"
                 android:textSize="16dp" />
@@ -139,7 +139,7 @@
                 android:layout_alignParentBottom="true"
                 android:background="@null"
                 android:focusable="false"
-                android:hint="请输入目的港"
+                android:hint="@string/please_select_the_destination_port"
                 android:textColor="@color/c101"
                 android:textColorHint="@color/c101_0.6"
                 android:textSize="16dp" />
@@ -183,7 +183,7 @@
             android:background="@null"
             android:focusable="false"
             android:gravity="right|center_vertical"
-            android:hint="请选择预计起运时间"
+            android:hint="@string/please_select_the_estimated_departure_time"
             android:textColor="@color/c101"
             android:textColorHint="@color/c101_0.6"
             android:textSize="16sp" />

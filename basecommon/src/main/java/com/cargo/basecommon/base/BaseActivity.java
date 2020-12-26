@@ -12,8 +12,9 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.cargo.basecommon.R;
 import com.cargo.basecommon.utils.ActivityCollector;
+import com.cargo.basecommon.utils.languageUtils.LanguageUtil;
+import com.cargo.basecommon.utils.languageUtils.SpUtil;
 
 import butterknife.ButterKnife;
 
@@ -104,4 +105,20 @@ public abstract class BaseActivity<V extends IView, P extends IPresenter> extend
         }
     }
 
+    /**
+     * 此方法先于 onCreate()方法执行
+     *
+     * @param newBase
+     */
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        //获取我们存储的语言环境 比如 "en","zh",等等
+        String language = SpUtil.getInstance(this).getString(SpUtil.LANGUAGE);
+        /**
+         * attach对应语言环境下的context
+         */
+        super.attachBaseContext(LanguageUtil.attachBaseContext(newBase, language));
+        //改变isEnglish 和 pagingView
+        LanguageUtil.updateData(newBase,language);
+    }
 }

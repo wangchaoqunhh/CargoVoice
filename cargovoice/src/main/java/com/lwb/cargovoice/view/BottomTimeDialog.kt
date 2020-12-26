@@ -21,6 +21,7 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import com.cargo.basecommon.constant.Constant.isEnglist
 import com.cargo.basecommon.utils.ListUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
@@ -182,7 +183,14 @@ object BottomTimeDialog : BottomSheetDialogFragment() {
             this.day = day
 
             val f = SimpleDateFormat("yyyy-MM-dd")
-            val weekDays = arrayOf("周日", "周一", "周二", "周三", "周四", "周五", "周六")
+            val weekDays = arrayOf(getString(R.string.day),
+                    getString(R.string.monday),
+                    getString(R.string.tuesday),
+                    getString(R.string.wednesday),
+                    getString(R.string.thursday),
+                    getString(R.string.friday),
+                    getString(R.string.saturday))
+
             val cal = Calendar.getInstance() // 获得一个日历
 
             val date = f.parse("$year-$month-$day")
@@ -190,6 +198,24 @@ object BottomTimeDialog : BottomSheetDialogFragment() {
             var w = cal[Calendar.DAY_OF_WEEK] - 1 // 指示一个周中的某天。
             if (w < 0) w = 0
             week = weekDays[w]
+        }
+    }
+
+    private fun monthCnToEng(month: String?): String {
+        return when (month) {
+            "1" -> "January"
+            "2" -> "February"
+            "3" -> "March"
+            "4" -> "April"
+            "5" -> "May"
+            "6" -> "June"
+            "7" -> "July"
+            "8" -> "August"
+            "9" -> "September"
+            "10" -> "October"
+            "11" -> "November"
+            "12" -> "December"
+            else -> "1"
         }
     }
 
@@ -203,9 +229,17 @@ object BottomTimeDialog : BottomSheetDialogFragment() {
 
         override fun convert(helper: BaseViewHolder, item: TimeBean) {
             if (currentYear == item.year?.toInt()) {
-                helper.setText(R.id.tv_month, item.month + "月")
+                if (isEnglist) {
+                    helper.setText(R.id.tv_month, monthCnToEng(item.month))
+                } else {
+                    helper.setText(R.id.tv_month, item.month + getString(R.string.month))
+                }
             } else {
-                helper.setText(R.id.tv_month, item.year + "年" + item.month + "月")
+                if (isEnglist) {
+                    helper.setText(R.id.tv_month, item.year + getString(R.string.year) + monthCnToEng(item.month))
+                } else {
+                    helper.setText(R.id.tv_month, item.year + getString(R.string.year) + item.month + getString(R.string.month))
+                }
             }
             val rvDay = helper.getView<RecyclerView>(R.id.rv_day)
             rvDay.layoutManager = GridLayoutManager(mContext, 7)

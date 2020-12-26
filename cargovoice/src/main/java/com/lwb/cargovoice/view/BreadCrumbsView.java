@@ -2,7 +2,6 @@ package com.lwb.cargovoice.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

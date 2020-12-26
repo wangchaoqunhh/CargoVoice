@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_r12dp_c100"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_china"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/svg_world_language_c100_60"/>
+        <TextView
+            android:id="@+id/tv_china"
+            android:layout_marginLeft="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="中文"
+            android:textColor="@color/c101"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_english"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/svg_world_language_c100_60"/>
+        <TextView
+            android:id="@+id/tv_english"
+            android:layout_marginLeft="72dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="English"
+            android:textColor="@color/c101"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

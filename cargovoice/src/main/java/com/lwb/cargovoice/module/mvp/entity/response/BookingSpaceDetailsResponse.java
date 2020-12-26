@@ -98,8 +98,17 @@ public class BookingSpaceDetailsResponse {
 
         private String ibookingCreateTime;
         private String ibookingNo;
-        private int status;
+        private String status;
+        private String statusCode;
         private String statusDesc;
+
+        public String getStatusCode() {
+            return statusCode;
+        }
+
+        public void setStatusCode(String statusCode) {
+            this.statusCode = statusCode;
+        }
 
         public String getStatusDesc() {
             return statusDesc;
@@ -125,11 +134,11 @@ public class BookingSpaceDetailsResponse {
             this.ibookingNo = ibookingNo;
         }
 
-        public int getStatus() {
+        public String getStatus() {
             return status;
         }
 
-        public void setStatus(int status) {
+        public void setStatus(String status) {
             this.status = status;
         }
     }

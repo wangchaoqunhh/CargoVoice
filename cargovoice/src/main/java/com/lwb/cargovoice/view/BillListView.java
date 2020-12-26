@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.cargo.basecommon.bean.GsonBean;
 import com.cargo.basecommon.utils.LocalJsonResolutionUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -23,6 +24,7 @@ import com.lwb.cargovoice.module.mvp.entity.response.BillListResponse;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.cargo.basecommon.constant.Constant.isEnglist;
 import static com.lwb.cargovoice.utils.ExpandingFunKt.fmtMicrometer;
 
 public class BillListView extends LinearLayout {
@@ -91,8 +93,9 @@ public class BillListView extends LinearLayout {
             tv_origin.setText(item.getPortOfOriginName());
             tv_terminus.setText(item.getPortOfDestinationName());
 
-            tv_goods_describe.setText("商品描述：" + item.getGoodsDesc());
-            tv_container_way.setText(LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "containerMode（装箱方式）.json", item.getContainerModeCode()).getNameCn());
+            tv_goods_describe.setText(mContext.getString(R.string.product_description) + "：" + item.getGoodsDesc());
+            GsonBean containerMode = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "containerMode（装箱方式）.json", item.getContainerModeCode());
+            tv_container_way.setText(isEnglist ? containerMode.getCode() : containerMode.getNameCn());
             tv_weight.setText(fmtMicrometer(mContext, item.getTotalWeight()) + item.getTotalWeightUnitCode());
             tv_volume.setText(fmtMicrometer(mContext, item.getTotalVolume()) + item.getTotalVolumeUnitCode());
 
@@ -101,7 +104,8 @@ public class BillListView extends LinearLayout {
             } else {
                 ivPlaneOrShip.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.svg_ic_plane_white));
             }
-            tvPlaneOrShip.setText(item.getTransportModeDesc());
+
+            tvPlaneOrShip.setText(LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "transportMode（运输方式）.json", item.getTransportModeCode()).getNameCn());
 
             //底下内容收缩 控件
             UMExpandLayout expand_view = helper.getView(R.id.expand_view);

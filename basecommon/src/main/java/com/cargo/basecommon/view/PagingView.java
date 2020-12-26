@@ -82,7 +82,6 @@ public class PagingView<T> extends LinearLayout {
         pageSize = array.getInt(R.styleable.PagingView_pv_pageSize, 10);
     }
 
-
     private void init(Context context) {
         this.mContext = context;
         View view = LayoutInflater.from(mContext).inflate(R.layout.paging_view, null);
@@ -132,7 +131,7 @@ public class PagingView<T> extends LinearLayout {
         recyclerview.setVisibility(View.GONE);
         mEmpty.setVisibility(View.VISIBLE);
         mIvEmy.setImageDrawable(mContext.getDrawable(R.drawable.svg_ic_undraw_aircraft_fbvl));
-        mTvEmy.setText("网络连接失败,请重新加载");
+        mTvEmy.setText(R.string.network_connection_failed_please_reload);
         mRefreshLayout.setEnableLoadMore(false);
     }
 
@@ -177,7 +176,7 @@ public class PagingView<T> extends LinearLayout {
             mEmpty.setVisibility(View.VISIBLE);
 
             mIvEmy.setImageDrawable(mContext.getDrawable(R.drawable.svg_ic_undraw_no_data_re_kwbl));
-            mTvEmy.setText("暂无内容");
+            mTvEmy.setText(R.string.no_content_yet);
 
             mRefreshLayout.setEnableLoadMore(false);
         }

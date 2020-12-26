@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="数量"
+        android:text="@string/quantity"
         android:textColor="@color/c101"
         android:textSize="16sp" />
 
@@ -46,7 +46,7 @@
             android:layout_toLeftOf="@id/tv_ok"
             android:background="@drawable/cargovoice_click_result"
             android:gravity="center"
-            android:text="取消"
+            android:text="@string/cancel"
             android:textColor="@color/c101"
             android:textSize="14sp" />
 
@@ -57,7 +57,7 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/cargovoice_click_result"
             android:gravity="center"
-            android:text="确定"
+            android:text="@string/determine"
             android:textColor="@color/c005"
             android:textSize="14sp" />
     </RelativeLayout>

@@ -1,3 +1,245 @@
 <resources>
-    <string name="app_name">basecommon</string>
+    <string name="app_name">CargoVoice</string>
+    <!-- 智能语音 -->
+    <string name="volume_close">语音播报已关闭</string>
+    <string name="volume_open">语音播报已开启</string>
+    <string name="hello">你好</string>
+    <string name="confirm_documents">单据确认</string>
+
+    <!-- 登录 -->
+    <string name="error_agree">请勾选并同意《用户服务及隐私保护协议》</string>
+    <string name="error_tel">手机号码有误</string>
+    <string name="error_verification">验证码输入有误</string>
+    <string name="get_verification">获取验证码</string>
+    <string name="send_again">重新发送</string>
+    <string name="exit_again">再按一次退出程序</string>
+    <string name="welcome">欢迎使用</string>
+    <string name="telephone">手机号</string>
+    <string name="verification">验证码</string>
+    <string name="read_and_agree">我已阅读并同意</string>
+    <string name="user_service_agreement">《用户服务及隐私保护协议》</string>
+    <string name="login">登录</string>
+    <!-- 首页 -->
+    <string name="sunday">日</string>
+    <string name="monday">一</string>
+    <string name="tuesday">二</string>
+    <string name="wednesday">三</string>
+    <string name="thursday">四</string>
+    <string name="friday">五</string>
+    <string name="saturday">六</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="week">星期</string>
+    <string name="no_rool">权限缺失</string>
+    <string name="my_enquiry">我的询价</string>
+    <string name="my_booking_space">我的订舱</string>
+    <string name="my_freight">我的货运</string>
+    <string name="fast_enquiry">快速询价</string>
+    <string name="fast_booking_space">快速订舱</string>
+    <string name="bill_query">账单查询</string>
+    <string name="cancel_account">是否注销当前账号?</string>
+
+    <!-- ________________________________我的询价列表EnquiryListActivity_______________________________________________ -->
+    <string name="container_mode">装箱方式</string>
+    <string name="weight">重量</string>
+    <string name="volume">体积</string>
+    <string name="one_click_booking">一键订舱</string>
+    <string name="please_select_shipping_method">请选择运输方式</string>
+    <string name="please_select_starting_post_and_destination_post">请选择起运岗和目的岗</string>
+    <string name="year">年</string>
+    <string name="inquiry_number">询价单号</string>
+
+    <!--___________________________________我的询价详情EnquiryDetailsActivity___________________________________________-->
+    <string name="port_of_departure">起运港</string>
+    <string name="destination">目的港</string>
+    <string name="shipment_information">货件信息</string>
+    <string name="view_all">查看全部</string>
+    <string name="service_level">服务级别</string>
+    <string name="shipment_service">运输服务</string>
+    <string name="trade_terms">贸易条款</string>
+    <string name="delivery_information">收货信息</string>
+    <string name="consignee">收货人</string>
+    <string name="contact_name">联系人姓名</string>
+    <string name="contact_number">联系电话</string>
+    <string name="shipping_address">收货地址</string>
+    <string name="cost_information">费用信息</string>
+    <string name="total">总计</string>
+    <string name="box">箱型</string>
+    <string name="container_volume">箱量</string>
+
+    <!-- ________________________________我的订舱列表BookingSpaceListActivity_______________________________________________ -->
+    <string name="container_way">集装方式</string>
+    <string name="booking_order_number">订舱单号</string>
+    <string name="no_booking_order_number">暂无订舱单号</string>
+
+    <!-- ________________________________我的货运列表FreightListActivity_______________________________________________ -->
+    <string name="exit">出口</string>
+    <string name="cargo_import">进口</string>
+    <string name="product_description">商品描述</string>
+    <string name="waybill_number">运单号</string>
+    <string name="no_waybill_number">暂无运单号</string>
+
+    <!-- ________________________________我的货运详情FreightDetailsActivity_______________________________________________ -->
+    <string name="the_total_amount">总数量</string>
+    <string name="way_of_delivery">放货方式</string>
+    <string name="payment_methods">付费方式</string>
+    <string name="shipment_status">装船状态</string>
+    <string name="transport_information">运输信息</string>
+    <string name="date_information">日期信息</string>
+    <string name="pick_up">提货</string>
+    <string name="estimated_delivery_date">预计提货日期</string>
+    <string name="latest_delivery_date">最迟提货日期</string>
+    <string name="shipping_notification_date">运输通知日期</string>
+    <string name="actual_delivery_date">实际提货日期</string>
+    <string name="deliver_the_goods">送货</string>
+    <string name="latest_delivery_date_later">最迟送货日期</string>
+    <string name="actual_delivery_date2">实际送货日期</string>
+    <string name="warehouse">仓储</string>
+    <string name="pick_up_time">可提货时间</string>
+    <string name="warehousing_start_time">仓储起算时间</string>
+    <string name="milestone">里程碑</string>
+    <string name="shipment">货件</string>
+    <string name="order_form">订单</string>
+    <string name="container">集装箱</string>
+    <string name="reference_no">参考号</string>
+    <string name="remark">备注</string>
+    <string name="actual_departure">实际出发</string>
+    <string name="actually_arrived">实际到达</string>
+    <string name="odd_number">单号:</string>
+    <string name="date">日期:</string>
+    <string name="type">类型:</string>
+    <string name="explanation">说明:</string>
+    <string name="carrier">承运人</string>
+    <string name="estimated_date">预计日期:</string>
+    <string name="actual_date">实际日期</string>
+    <string name="container_number">集装箱号码</string>
+    <string name="packing_quantity">包装数量</string>
+    <string name="type_of_packaging">包装类型</string>
+    <string name="estimated_heavy_delivery_date">预计重箱提货日期</string>
+    <string name="actual_date_of_heavy_container_withdrawal">实际重柜提柜日期</string>
+    <string name="waybill_number_has_been_copied">运单号已复制</string>
+    <string name="no_bill_of_lading_number">暂无提单号码</string>
+    <string name="the_bill_of_lading_number_has_been_copied">提单号码已复制</string>
+    <string name="no_milestones">暂无里程碑</string>
+    <string name="tracking_number">提单号码</string>
+
+    <!-- ________________________________我的账单BillListActivity_______________________________________________ -->
+    <string name="my_bill">我的账单</string>
+    <string name="open">未结</string>
+    <string name="closed">已结</string>
+    <string name="bill_amount">账单金额(CNY)</string>
+    <string name="outstanding_amount">未结金额(CNY)</string>
+    <string name="bill_number">账单编号</string>
+    <string name="os_total">未结总计(CNY):</string>
+
+
+    <!-- ________________________________添加大页EnquiryAddGoalActivity_______________________________________________ -->
+    <string name="please_select_the_departure_time">请选择起运时间</string>
+    <string name="please_select_the_port_of_departure">请选择起运港</string>
+    <string name="please_select_the_destination_port">请选择目的港</string>
+    <string name="bulk_cargo">散货</string>
+    <string name="fcl">整箱</string>
+    <string name="shipments_information">发货信息</string>
+    <string name="add_shipper_information">添加发货人信息</string>
+    <string name="add_consignee_information">添加收货人信息</string>
+    <string name="submit">提交</string>
+    <string name="please_choose_a_container">请选择集装方式</string>
+    <string name="please_add_container_information">请添加集装箱信息</string>
+    <string name="please_add_shipment_information">请添加货件信息</string>
+    <string name="please_select_service_level">请选择服务级别</string>
+    <string name="please_select_trade_terms">请选择贸易条款</string>
+    <string name="please_add_shipper_information">请添加发货人信息</string>
+    <string name="please_add_consignee_information">请添加收货人信息</string>
+
+
+    <!-- ________________________________添加集装箱页AddContainerActivity______________________________________________ -->
+    <string name="start_shipment">起运</string>
+    <string name="save">保存</string>
+    <string name="your_number_of_boxes_has_been_added_to_the_maximum">您的箱数已添加到最大</string>
+    <string name="total_number_of_boxes">箱型总数</string>
+    <string name="the_total_number_of_boxes">总箱数</string>
+    <string name="please_choose_box_type">请选择箱型</string>
+    <string name="please_enter_the_box_quantity">请输入箱量</string>
+    <string name="please_enter_the_container_number">请输入集装箱号码</string>
+    <string name="zero_box">0箱</string>
+    <string name="soc_box">SOC箱</string>
+    <string name="one_box">箱</string>
+    <string name="container_num">集装箱号码</string>
+
+    <!-- ________________________________货件信息列表AddGoodsInfoActivity______________________________________________ -->
+    <string name="category">类别</string>
+    <string name="total_num">总数</string>
+    <string name="quantity">数量</string>
+    <string name="dangerous_goods">危险品</string>
+    <string name="hs_code">HS编码</string>
+
+    <!-- ________________________________添加 发货/收货 信息AddHarvestInfoActivity______________________________________________ -->
+    <string name="country_province_city">国家/省/市</string>
+    <string name="address">详细地址</string>
+    <string name="company_name">名称</string>
+    <string name="postcode">邮编</string>
+    <string name="please_enter_a_name">请输入名称</string>
+    <string name="please_enter_a_contact">请输入联系人</string>
+    <string name="please_enter_the_correct_contact_number">请输入正确的联系电话</string>
+    <string name="please_enter_country_province_city">请输入国家/省/市</string>
+    <string name="please_enter_the_detailed_address">请输入详细地址</string>
+
+    <!-- ________________________________添加货件信息 AddGoodsInfoDetailsActivity -->
+    <string name="shipment_category">货件类别</string>
+    <string name="shipment_description">货件描述</string>
+    <string name="mark">唛头</string>
+    <string name="dangerous_goods_identification">危险品标识</string>
+    <string name="dangerous_goods_level">危险品等级</string>
+    <string name="please_select_the_shipment_category">请选择货件类别</string>
+    <string name="please_enter_the_quantity">请输入数量</string>
+    <string name="please_select_the_quantity_unit">请选择数量单位</string>
+    <string name="please_enter_the_volume">请输入体积</string>
+    <string name="please_select_volume_unit">请选择体积单位</string>
+    <string name="please_enter_weight">请输入重量</string>
+    <string name="please_select_a_weight_unit">请选择重量单位</string>
+    <string name="please_enter_the_mark">请输入唛头</string>
+    <string name="please_select_the_dangerous_goods_class">请选择危险品等级</string>
+    <string name="please_enter_hs_code">请输入HS编码</string>
+    <string name="add_shipment_information">添加货件信息</string>
+
+    <!-- ________________________________选择地址页 SelectRegionActivity -->
+    <string name="please_choose">请选择</string>
+    <string name="area_select">地区选择</string>
+
+
+    <!-- ________________________________自定义控件需要的-->
+    <string name="address_selection">地址选择</string>
+    <string name="add_address">新增地址</string>
+    <string name="cancel">取消</string>
+    <string name="determine">确定</string>
+    <string name="submitted_successfully">提交成功</string>
+    <string name="submission_failed_please_try_again">提交失败,请重新尝试</string>
+    <string name="submitting_for_you_please_wait_patiently">正在为您提交，请耐心等待…</string>
+    <string name="airlift">空运</string>
+    <string name="oceanShipping">海运</string>
+    <string name="please_select_the_estimated_departure_time">请选择预计起运时间</string>
+    <string name="goods">物品</string>
+    <string name="share_to">分享到</string>
+    <string name="wechat">微信</string>
+    <string name="mailbox">邮箱</string>
+    <string name="link">链接</string>
+    <string name="your_estimated_departure_date_is">您预计的起运日期是...</string>
+    <string name="it_s_over">—已经到底了—</string>
+    <string name="network_connection_failed_please_reload">网络连接失败,请重新加载</string>
+    <string name="no_content_yet">暂无内容</string>
+
+    <string name="pull_down_to_refresh">下拉可以刷新</string>
+    <string name="Refreshing">正在刷新...</string>
+    <string name="Loading">正在加载...</string>
+    <string name="RefreshImmediatelyAfterRelease">释放立即刷新</string>
+    <string name="RefreshComplete">刷新完成</string>
+    <string name="RefreshFailed">刷新失败</string>
+    <string name="LastUpdate">上次更新 M-d HH:mm</string>
+
+    <string name="PullUpToLoadMore">上拉加载更多</string>
+    <string name="ReleaseAndLoadImmediately">释放立即加载</string>
+    <string name="LoadingCompleted">加载完成</string>
+    <string name="FailedToLoad">加载失败</string>
+    <string name="NoMoreData">没有更多数据了</string>
+
 </resources>

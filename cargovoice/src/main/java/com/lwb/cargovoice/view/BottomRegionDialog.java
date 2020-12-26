@@ -19,11 +19,9 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.lwb.cargovoice.R;
 import com.lwb.cargovoice.adapter.AddHarvestInfoAdapter;
 import com.lwb.cargovoice.module.mvp.entity.response.AddHarvestInfoResponse;
-import com.lwb.cargovoice.utils.ClickToolsUtil;
 
 import java.util.List;
 

@@ -34,7 +34,7 @@ class AddContainerActivity : BaseFragmentActivity<IView<*>?, IPresenter?>() {
 
         fab_add.setOnClickListener {
             if (mRequest.containerList.size >= 20) {
-                AirToast.showToast("您的箱数已添加到最大")
+                AirToast.showToast(getString(R.string.your_number_of_boxes_has_been_added_to_the_maximum))
                 return@setOnClickListener
             }
             val containerListBean = EnquiryAddGoalRequest.ContainerListBean()
@@ -56,7 +56,7 @@ class AddContainerActivity : BaseFragmentActivity<IView<*>?, IPresenter?>() {
             //海空运初始化 对象
             var sea: GsonBean? = getFun("SEA")
             //空运初始化 对象
-            var air: GsonBean? =  getFun("AIR")
+            var air: GsonBean? = getFun("AIR")
 
             containerListBean.containerTypeCode = if (mRequest.businessInfo.transportModeCode == "SEA") sea?.code else air?.code
             containerListBean.containerTypeDesc = if (mRequest.businessInfo.transportModeCode == "SEA") sea?.nameCn else air?.nameCn
@@ -103,8 +103,8 @@ class AddContainerActivity : BaseFragmentActivity<IView<*>?, IPresenter?>() {
                 containerCount += containerListBean.containerCount
             }
             runOnUiThread {
-                tv_container_type.text = "箱型总数:" + containerType.size
-                tv_container_num.text = "总箱数:$containerCount"
+                tv_container_type.text = getString(R.string.total_number_of_boxes) + "：" + containerType.size
+                tv_container_num.text = getString(R.string.the_total_number_of_boxes) + "：" + containerCount
                 isIntercept = false
             }
         }).start()
@@ -113,15 +113,15 @@ class AddContainerActivity : BaseFragmentActivity<IView<*>?, IPresenter?>() {
     private fun isEmptyCheck(): Boolean {
         mRequest.containerList?.forEach {
             if (TextUtils.isEmpty(it.containerTypeCode)) {
-                AirToast.showToast("请选择箱型")
+                AirToast.showToast(getString(R.string.please_choose_box_type))
                 return true
             }
             if (it.containerCount < 1) {
-                AirToast.showToast("请输入箱量")
+                AirToast.showToast(getString(R.string.please_enter_the_box_quantity))
                 return true
             }
             if (it.isShipperOwned && TextUtils.isEmpty(it.containerNumber)) {
-                AirToast.showToast("请输入集装箱号码")
+                AirToast.showToast(getString(R.string.please_enter_the_container_number))
                 return true
             }
         }

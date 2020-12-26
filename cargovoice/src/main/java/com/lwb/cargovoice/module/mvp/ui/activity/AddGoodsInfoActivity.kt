@@ -76,8 +76,8 @@ class AddGoodsInfoActivity : BaseActivity<IView<*>?, IPresenter?>() {
                 num += (bean.packQty).toInt()
             }
         }
-        tv_goods_classes.text = "类别：" + goodsTypeMap.size
-        tv_sum.text = "总数：$num"
+        tv_goods_classes.text = getString(R.string.category) + "：" + goodsTypeMap.size
+        tv_sum.text = getString(R.string.total_num) + "：" + num
     }
 
     companion object {

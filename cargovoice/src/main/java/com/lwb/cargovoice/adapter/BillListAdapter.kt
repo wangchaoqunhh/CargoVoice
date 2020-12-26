@@ -10,11 +10,11 @@ import com.lwb.cargovoice.view.BillListView
 class BillListAdapter(layoutResId: Int, data: List<BillListResponse?>?) : BaseQuickAdapter<BillListResponse?, BaseViewHolder?>(layoutResId, data) {
     override fun convert(helper: BaseViewHolder?, item: BillListResponse?) {
         item?.apply {
-            helper?.setText(R.id.tv_number, "账单编号：$number")
+            helper?.setText(R.id.tv_number, mContext.getString(R.string.bill_number)+"："+number)
                     ?.setText(R.id.tv_transactionDate, transactionDate)
                     ?.setText(R.id.tv_osTotal, mContext.fmtMicrometer(osTotal))
                     ?.setText(R.id.tv_outstandingAmount, mContext.fmtMicrometer(outstandingAmount))
-                    ?.setText(R.id.tv_jobKey, "运单号：$jobKey")
+                    ?.setText(R.id.tv_jobKey, mContext.getString(R.string.waybill_number)+"："+jobKey)
             val blv = helper?.getView<BillListView>(R.id.blv)
             blv?.setList(item?.shipmentList)
         }

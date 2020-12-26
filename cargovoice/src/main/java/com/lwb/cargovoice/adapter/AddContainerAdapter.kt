@@ -42,7 +42,7 @@ class AddContainerAdapter(private var settingContainerTypeNum: (() -> Unit?)? = 
         val containerJson = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "containerType（箱型）.json", item.containerTypeCode)
         tvContainerType.text = containerJson.nameCn
         //集装箱 个数
-        tvContainerNum.text = mContext.fmtMicrometer(item.containerCount.toString()) + "箱"
+        tvContainerNum.text = mContext.fmtMicrometer(item.containerCount.toString()) + mContext.getString(R.string.one_box)
         //设置swich选择否 必须用 if else
         if (recyclerView.isComputingLayout) {
             recyclerView.post {
@@ -74,7 +74,7 @@ class AddContainerAdapter(private var settingContainerTypeNum: (() -> Unit?)? = 
             addNumDialog.setDecimals(false)
             addNumDialog.setBack {
                 item.containerCount = it?.toInt()!!
-                tvContainerNum.text = mContext.fmtMicrometer(item.containerCount.toString()) + "箱"
+                tvContainerNum.text = mContext.fmtMicrometer(item.containerCount.toString()) + mContext.getString(R.string.one_box)
                 settingContainerTypeNum?.invoke()
             }
             addNumDialog.show((mContext as BaseFragmentActivity<*, *>).supportFragmentManager, "")

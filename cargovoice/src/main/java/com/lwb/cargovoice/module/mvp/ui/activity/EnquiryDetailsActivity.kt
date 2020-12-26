@@ -10,9 +10,11 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.cargo.basecommon.base.BaseFragmentActivity
+import com.cargo.basecommon.constant.Constant.isEnglist
 import com.cargo.basecommon.utils.AirToast
 import com.cargo.basecommon.utils.CopyTextUtil
 import com.cargo.basecommon.utils.ListUtils
+import com.cargo.basecommon.utils.LocalJsonResolutionUtils
 import com.cargo.basecommon.utils.TimeUtils.stampToDateTime
 import com.lwb.cargovoice.R
 import com.lwb.cargovoice.adapter.GoodsInfoAdapter
@@ -45,10 +47,10 @@ class EnquiryDetailsActivity : BaseFragmentActivity<EnquiryDetailsContract.View?
         bottom_but.rlBut.setOnClickListener {
             //TODO 后期得改 status
             when (mResponse?.basicInfo?.status) {//status
-                101 -> {//询价中 取消询价 （已废弃）
+                "101" -> {//询价中 取消询价 （已废弃）
 
                 }
-                102 -> {//已报价 一键订舱 102
+                "102" -> {//已报价 一键订舱 102
                     mPresenter?.oneTouch(id)
                     //点提交按钮 出弹窗
                     mAddSuccessDialog = AddSuccessDialog()
@@ -96,22 +98,22 @@ class EnquiryDetailsActivity : BaseFragmentActivity<EnquiryDetailsContract.View?
             //询价信息
             val basicInfo = response.basicInfo
             basicInfo.apply {
-                tv_code.text = "询价单号：" + if (TextUtils.isEmpty(inquiryNo)) "-" else inquiryNo
+                tv_code.text = getString(R.string.inquiry_number) + "：" + if (TextUtils.isEmpty(inquiryNo)) "-" else inquiryNo
                 tv_enquiry_time.text = if (TextUtils.isEmpty(inquiryCreateTime)) "-" else stampToDateTime(inquiryCreateTime.toLong())
-                toolbar.title = if (TextUtils.isEmpty(statusDesc)) "-" else statusDesc
-                if (status == 102) {
+                toolbar.title = if (TextUtils.isEmpty(status)) "-" else LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "statusType.json", status).nameCn
+                if (status == "102") {
                     tv_money.text = "￥$quotedPrice"
                 }
 
                 //TODO 后期得改 status
                 when (status) {//status
-                    101 -> {//询价中 取消询价
+                    "101" -> {//询价中 取消询价
                         bottom_but.visibility = View.GONE
                         tv_money.visibility = View.GONE
                     }
-                    102 -> {//已报价 一键订舱 //102
+                    "102" -> {//已报价 一键订舱 //102
                         bottom_but.visibility = View.VISIBLE
-                        bottom_but.setTvButText("一键订舱")
+                        bottom_but.setTvButText(getString(R.string.one_click_booking))
                         tv_money.visibility = View.VISIBLE
                     }
                     else -> {
@@ -132,7 +134,7 @@ class EnquiryDetailsActivity : BaseFragmentActivity<EnquiryDetailsContract.View?
             //业务类型
             var businessInfo = response.businessInfo
             businessInfo.apply {
-                tv_plane_or_ship.text = transportModeDesc
+                tv_plane_or_ship.text = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "transportMode（运输方式）.json", transportModeCode).nameCn
                 iv_plane_or_ship.setImageDrawable(ContextCompat.getDrawable(mContext, if (transportModeCode == "SEA") R.drawable.svg_ic_ship_white else R.drawable.svg_ic_plane_white))
             }
 
@@ -146,8 +148,9 @@ class EnquiryDetailsActivity : BaseFragmentActivity<EnquiryDetailsContract.View?
                     val bean = containerList.get(i);
                     val tvContainerMode = view.findViewById<TextView>(R.id.tv_container_mode)
                     val tvContainerNum = view.findViewById<TextView>(R.id.tv_container_num)
-                    tvContainerMode.text = "箱型：" + bean.containerTypeDesc
-                    tvContainerNum.text = "箱量：" + fmtMicrometer(bean.containerCount)
+                    val containerType = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "containerType（箱型）.json", bean.containerTypeCode)
+                    tvContainerMode.text = getString(R.string.box) + ":" + if (isEnglist) containerType.code else containerType.nameCn
+                    tvContainerNum.text = getString(R.string.container_volume) + ":" + fmtMicrometer(bean.containerCount)
                     if (i == containerList.size - 1) {
                         view.findViewById<View>(R.id.view_line).visibility = View.GONE
                     }
@@ -171,8 +174,8 @@ class EnquiryDetailsActivity : BaseFragmentActivity<EnquiryDetailsContract.View?
             //运输服务
             var transportService = response.transportService
             transportService.apply {
-                sv_serve_rank.setLeft(serviceLevelDesc)
-                sv_serve_clause.setLeft(incoTermDesc)
+                sv_serve_rank.setLeft(LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "serviceLevel（服务级别）.json", serviceLevelCode).nameCn)
+                sv_serve_clause.setLeft(LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "incoTerm（贸易条款）.json", incoTermCode).nameCn)
             }
             //关联人 （收货人）
             var organizationList = response.organizationList

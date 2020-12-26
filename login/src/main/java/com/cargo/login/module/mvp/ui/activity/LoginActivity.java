@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,12 +16,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.cargo.basecommon.base.BaseFragmentActivity;
 import com.cargo.basecommon.base.BaseResponse;
 import com.cargo.basecommon.utils.ActivityCollector;
@@ -31,25 +30,24 @@ import com.cargo.basecommon.utils.InputMethodUtil;
 import com.cargo.basecommon.utils.ListUtils;
 import com.cargo.basecommon.utils.MatchUtil;
 import com.cargo.basecommon.utils.SPUtils;
+import com.cargo.basecommon.utils.SwitchLanguageUtil;
+import com.cargo.basecommon.utils.languageUtils.LanguageType;
 import com.cargo.login.R;
 import com.cargo.login.R2;
 import com.cargo.login.contentObserver.SmsObserver;
 import com.cargo.login.module.mvp.contract.LoginContract;
 import com.cargo.login.module.mvp.entity.request.HolderBean;
 import com.cargo.login.module.mvp.presenter.LoginPresenter;
+import com.cargo.login.module.mvp.ui.fragment.LanguageDialogFragment;
 import com.cargo.login.utils.VerificationCountDownTimer;
 import com.cargo.login.view.BottomHolderDialog;
-import com.github.dfqin.grantor.PermissionListener;
-import com.github.dfqin.grantor.PermissionsUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-
-import static android.Manifest.permission.READ_SMS;
-import static android.Manifest.permission.RECEIVE_SMS;
 
 @Route(path = "/login/LoginActivity")
 public class LoginActivity extends BaseFragmentActivity<LoginContract.View, LoginPresenter> implements LoginContract.View {
@@ -65,6 +63,12 @@ public class LoginActivity extends BaseFragmentActivity<LoginContract.View, Logi
     TextView tvVerification;
     @BindView(R2.id.ll_agree)
     LinearLayout llAgree;
+    @BindView(R2.id.ll_language)
+    LinearLayout llLanguage;
+    @BindView(R2.id.iv_agree)
+    ImageView ivAgree;
+    @BindView(R2.id.tv_language)
+    TextView tvLanguage;
 
     // 定义一个变量，来标识是否退出
     private static boolean isExit = false;
@@ -82,27 +86,73 @@ public class LoginActivity extends BaseFragmentActivity<LoginContract.View, Logi
     private SmsObserver mSmsObserver;
     private ArrayList<HolderBean> mHolderList;
     private int mIndex;
+    private LanguageDialogFragment dialogFragment;
+    //是否同意用户协议
+    private boolean isAgree;
 
     @Override
     protected void init() {
         SPUtils.put(mContext, "token", "");
-        PermissionsUtil.requestPermission(this, new PermissionListener() {
-            @Override
-            public void permissionGranted(@NonNull String[] permissions) {
-                //注册内容提供者
-                fixedPhone();
-            }
-
-            @Override
-            public void permissionDenied(@NonNull String[] permissions) {
-            }
-        }, READ_SMS, RECEIVE_SMS);
+        //读取是否勾选用户协议
+        isAgree = (boolean) SPUtils.get(mContext,"isAgree",false);
+        if (isAgree){
+            ivAgree.setImageDrawable(ContextCompat.getDrawable(mContext,R.drawable.svg_ic_circle_check));
+        }else{
+            ivAgree.setImageDrawable(ContextCompat.getDrawable(mContext,R.drawable.svg_ic_circle));
+        }
+        //读取语言
+        if (SPUtils.get(mContext, "language","CN").equals("CN")){
+            tvLanguage.setText("中文");
+        }else{
+            tvLanguage.setText("English");
+        }
+//        PermissionsUtil.requestPermission(this, new PermissionListener() {
+//            @Override
+//            public void permissionGranted(@NonNull String[] permissions) {
+//                //注册内容提供者
+//                fixedPhone();
+//            }
+//
+//            @Override
+//            public void permissionDenied(@NonNull String[] permissions) {
+//            }
+//        }, READ_SMS, RECEIVE_SMS);
         fullScreen(this);
         initCountDownTimer();
         initListener();
     }
 
     private void initListener() {
+        ivAgree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isAgree = !isAgree;
+                SPUtils.put(mContext,"isAgree",isAgree);
+                if (isAgree){
+                    ivAgree.setImageDrawable(ContextCompat.getDrawable(mContext,R.drawable.svg_ic_circle_check));
+                }else{
+                    ivAgree.setImageDrawable(ContextCompat.getDrawable(mContext,R.drawable.svg_ic_circle));
+                }
+            }
+        });
+        llLanguage.setOnClickListener(v -> {
+            dialogFragment = LanguageDialogFragment.newInstance();
+            dialogFragment.setOnLanguageChangeListener(new LanguageDialogFragment.OnLanguageChangeListener() {
+                @Override
+                public void onLanguageChange(String simplifiedChinese) {
+                    if (LanguageType.CHINESE.getLanguage().equals(simplifiedChinese)){
+                        //中文
+                        SPUtils.put(mContext,"language","CN");
+                        tvLanguage.setText("中文");
+                    }else{
+                        SPUtils.put(mContext,"language","UK");
+                        tvLanguage.setText("English");
+                    }
+                }
+            });
+            dialogFragment.show(getSupportFragmentManager(), "dialog");
+        });
+
         llAgree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,9 +246,14 @@ public class LoginActivity extends BaseFragmentActivity<LoginContract.View, Logi
     public void onViewClicked(View view) {
         int i = view.getId();
         InputMethodUtil.closeIfNeeded(this);
+        if (!isAgree){
+            //未勾选用户协议
+            AirToast.showToast(getString(R.string.error_agree));
+            return;
+        }
         if (!MatchUtil.matchTel(etTel.getText().toString())) {
             //手机号验证未通过
-            AirToast.showToast("手机号码有误");
+            AirToast.showToast(getString(R.string.error_tel));
             return;
         }
         if (i == R.id.tv_login) {
@@ -206,7 +261,8 @@ public class LoginActivity extends BaseFragmentActivity<LoginContract.View, Logi
                 //获取临时Token
                 mPresenter.getPreToken(etTel.getText().toString(), etVerification.getText().toString());
             } else {
-                AirToast.showToast("验证码输入有误");
+                AirToast.showToast(getString(R.string.error_verification));
+
             }
         }
         if (i == R.id.tv_verification) {
@@ -240,12 +296,12 @@ public class LoginActivity extends BaseFragmentActivity<LoginContract.View, Logi
         mTimer = new VerificationCountDownTimer(l, 1000) {
             @Override
             public void onFinish() {
-                tvVerification.setText("获取验证码");
+                tvVerification.setText(R.string.get_verification);
             }
 
             @Override
             public void onTick(long millisUntilFinished) {
-                tvVerification.setText("重新发送" + millisUntilFinished / 1000);
+                tvVerification.setText(getString(R.string.send_again) + millisUntilFinished / 1000);
             }
         };
     }
@@ -285,8 +341,7 @@ public class LoginActivity extends BaseFragmentActivity<LoginContract.View, Logi
     private void exit() {
         if (!isExit) {
             isExit = true;
-            Toast.makeText(getApplicationContext(), "再按一次退出程序",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.exit_again, Toast.LENGTH_SHORT).show();
             // 利用handler延迟发送更改状态信息
             mHandler.sendEmptyMessageDelayed(0, 2000);
         } else {
@@ -364,4 +419,8 @@ public class LoginActivity extends BaseFragmentActivity<LoginContract.View, Logi
         startActivity(intent);
         finish();
     }
+    public void refesh(){
+        recreate();
+    }
+
 }

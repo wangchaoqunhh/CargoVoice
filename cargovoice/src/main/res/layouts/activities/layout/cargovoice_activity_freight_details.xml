@@ -149,7 +149,7 @@
                     android:layout_height="48dp">
 
                     <LinearLayout
-                        android:layout_width="92dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="36dp"
                         android:layout_centerVertical="true"
                         android:background="@drawable/cargovoice_shape_r18dp_c005"
@@ -166,6 +166,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
+                            android:layout_marginEnd="20dp"
                             android:text=""
                             android:textColor="@color/c101"
                             android:textSize="14sp" />
@@ -228,7 +229,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:alpha="0.6 "
-                                android:text="起运港"
+                                android:text="@string/port_of_departure"
                                 android:textColor="@color/c101"
                                 android:textSize="12sp" />
 
@@ -262,7 +263,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:alpha="0.6"
-                                android:text="目的港"
+                                android:text="@string/destination"
                                 android:textColor="@color/c101"
                                 android:textSize="12sp" />
 
@@ -305,7 +306,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="货运信息"
+                    android:text="@string/shipment_information"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -313,43 +314,43 @@
                     android:id="@+id/sv_sum"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="总数量" />
+                    app:sv_name="@string/the_total_amount" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_volume"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="体积" />
+                    app:sv_name="@string/volume" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_weight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="重量" />
+                    app:sv_name="@string/weight" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_container_mode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="装箱方式" />
+                    app:sv_name="@string/container_mode" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_release_mode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="放货方式" />
+                    app:sv_name="@string/way_of_delivery" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_pay_mode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="付费方式" />
+                    app:sv_name="@string/payment_methods" />
 
                 <com.lwb.cargovoice.view.StripView
                     android:id="@+id/sv_lading_state"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:sv_name="装船状态" />
+                    app:sv_name="@string/shipment_status" />
             </LinearLayout>
 
             <LinearLayout
@@ -367,7 +368,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="运输信息"
+                    android:text="@string/transport_information"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -385,7 +386,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="查看全部"
+                    android:text="@string/view_all"
                     android:textColor="@color/c005"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -405,7 +406,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="日期信息"
+                    android:text="@string/date_information"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -423,7 +424,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center_vertical"
-                    android:text="提货"
+                    android:text="@string/pick_up"
                     android:textColor="@color/c101"
                     android:textSize="12sp" />
 
@@ -445,7 +446,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="预计提货日期"
+                            android:text="@string/estimated_delivery_date"
                             android:textColor="#ffffff"
                             android:textSize="12sp" />
 
@@ -474,7 +475,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="最迟提货日期"
+                            android:text="@string/latest_delivery_date"
                             android:textColor="@color/c101"
                             android:textSize="12sp" />
 
@@ -509,7 +510,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="运输通知日期"
+                            android:text="@string/shipping_notification_date"
                             android:textColor="@color/c101"
                             android:textSize="12sp" />
 
@@ -538,7 +539,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="实际提货日期"
+                            android:text="@string/actual_delivery_date"
                             android:textColor="@color/c101"
                             android:textSize="12sp" />
 
@@ -570,7 +571,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center_vertical"
-                    android:text="送货"
+                    android:text="@string/deliver_the_goods"
                     android:textColor="@color/c101"
                     android:textSize="12sp" />
 
@@ -592,7 +593,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="最迟送货日期"
+                            android:text="@string/latest_delivery_date_later"
                             android:textColor="@color/c101"
                             android:textSize="12sp" />
 
@@ -621,7 +622,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="运输通知日期"
+                            android:text="@string/shipping_notification_date"
                             android:textColor="@color/c101"
                             android:textSize="12sp" />
 
@@ -656,7 +657,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="实际送货日期"
+                            android:text="@string/actual_delivery_date2"
                             android:textColor="@color/c101"
                             android:textSize="12sp" />
 
@@ -687,7 +688,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="8dp"
                     android:gravity="center_vertical"
-                    android:text="仓储"
+                    android:text="@string/warehouse"
                     android:textColor="@color/c101"
                     android:textSize="12sp" />
 
@@ -709,7 +710,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="可提货时间"
+                            android:text="@string/pick_up_time"
                             android:textColor="@color/c101"
                             android:textSize="12sp" />
 
@@ -738,7 +739,7 @@
                             android:layout_height="wrap_content"
                             android:alpha="0.6"
                             android:gravity="center_vertical"
-                            android:text="仓储起算时间"
+                            android:text="@string/warehousing_start_time"
                             android:textColor="@color/c101"
                             android:textSize="12sp" />
 
@@ -773,7 +774,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="里程碑"
+                    android:text="@string/milestone"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -791,7 +792,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="查看全部"
+                    android:text="@string/view_all"
                     android:textColor="@color/c005"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -811,7 +812,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="货件"
+                    android:text="@string/shipment"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -820,7 +821,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:screenReaderFocusable="false"
-
                     app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 
                 <TextView
@@ -830,7 +830,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="查看全部"
+                    android:text="@string/view_all"
                     android:textColor="@color/c005"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -850,7 +850,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="订单"
+                    android:text="@string/order_form"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -859,7 +859,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:screenReaderFocusable="false"
-
                     app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 
                 <TextView
@@ -869,7 +868,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="查看全部"
+                    android:text="@string/view_all"
                     android:textColor="@color/c005"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -889,7 +888,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="集装箱"
+                    android:text="@string/container"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -898,7 +897,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:screenReaderFocusable="false"
-
                     app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 
                 <TextView
@@ -908,7 +906,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="查看全部"
+                    android:text="@string/view_all"
                     android:textColor="@color/c005"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -928,7 +926,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="参考号"
+                    android:text="@string/reference_no"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -937,7 +935,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:screenReaderFocusable="false"
-
                     app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 
                 <TextView
@@ -947,7 +944,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="查看全部"
+                    android:text="@string/view_all"
                     android:textColor="@color/c005"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -967,7 +964,7 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="12dp"
                     android:gravity="center"
-                    android:text="备注"
+                    android:text="@string/remark"
                     android:textColor="@color/c101"
                     android:textSize="16sp" />
 
@@ -976,7 +973,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:screenReaderFocusable="false"
-
                     app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 
                 <TextView
@@ -986,7 +982,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="8dp"
                     android:gravity="center"
-                    android:text="查看全部"
+                    android:text="@string/view_all"
                     android:textColor="@color/c005"
                     android:textSize="14sp" />
             </LinearLayout>

@@ -11,7 +11,7 @@
         android:layout_marginStart="24dp"
         android:alpha="0.6"
         android:gravity="center"
-        android:text="分享到"
+        android:text="@string/share_to"
         android:textColor="@color/c101"
         android:textSize="16sp" />
 
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="17dp"
                 android:gravity="center"
-                android:text="微信"
+                android:text="@string/wechat"
                 android:textColor="@color/c101"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="17dp"
                 android:gravity="center"
-                android:text="邮箱"
+                android:text="@string/mailbox"
                 android:textColor="@color/c101"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="17dp"
                 android:gravity="center"
-                android:text="链接"
+                android:text="@string/link"
                 android:textColor="@color/c101"
                 android:textSize="14sp" />
         </LinearLayout>

@@ -15,7 +15,6 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -23,11 +22,9 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.cargo.basecommon.base.BaseActivity;
 import com.cargo.basecommon.base.BaseFragmentActivity;
 import com.cargo.basecommon.utils.AirToast;
 import com.cargo.basecommon.utils.InputMethodUtil;
@@ -215,11 +212,11 @@ public class AIActivity extends BaseFragmentActivity<AIContract.View, AIPresente
             if (isVolume) {
                 //变为不能说话
                 ivVolume.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.svg_ic_volume_3));
-                AirToast.showToast("语音播报已关闭");
+                AirToast.showToast(getString(R.string.volume_close));
             } else {
                 //变为能说话
                 ivVolume.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.svg_ic_volume));
-                AirToast.showToast("语音播报已开启");
+                AirToast.showToast(getString(R.string.volume_open));
             }
             isVolume = !isVolume;
             //记录是否语音播报最新状态
@@ -323,7 +320,7 @@ public class AIActivity extends BaseFragmentActivity<AIContract.View, AIPresente
             //当前状态为开始
             AIRequest request = new AIRequest();
             request.setSender((String) SPUtils.get(mContext, "token", ""));
-            request.setMessage("你好");
+            request.setMessage(getString(R.string.hello));
             mPresenter.aiHook(request);
             //切换状态
             requestType = 2;

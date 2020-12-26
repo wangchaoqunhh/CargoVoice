@@ -137,7 +137,7 @@ public class DataDialogFragment extends DialogFragment {
     @Override
     public void onResume() {
         super.onResume();
-        getDialog().getWindow().setLayout(Dp2pxUtils.dp2px(getActivity(), 336), Dp2pxUtils.dp2px(getContext(), 544));
+        getDialog().getWindow().setLayout(Dp2pxUtils.dp2px(getActivity(), 312), Dp2pxUtils.dp2px(getContext(), 544));
     }
 
 
@@ -147,8 +147,6 @@ public class DataDialogFragment extends DialogFragment {
 
     public void setOnDataFinishListener(OnDataFinishListener listener) {
         mListener = listener;
-    }
-
-    ;
+    };
 
 }

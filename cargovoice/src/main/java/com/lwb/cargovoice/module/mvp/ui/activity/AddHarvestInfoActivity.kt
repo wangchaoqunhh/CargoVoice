@@ -25,15 +25,16 @@ class AddHarvestInfoActivity : BaseFragmentActivity<AddHarvestInfoContract.View,
     override fun init() {
         mRequest = (application as BaseApplication).request
         val title: String? = intent.getStringExtra("title")
-        commonToolbar.setTvTitle(title)
 
-        if (title == "发货信息") {
+        if (title == "1") {
             bean = mRequest.consignor
             bean.category = 1
             et_company.visibility = View.GONE
-        } else if (title == "收货信息") {
+            commonToolbar.setTvTitle(getString(R.string.shipments_information))
+        } else if (title == "2") {
             bean = mRequest.consignee
             bean.category = 3
+            commonToolbar.setTvTitle(getString(R.string.delivery_information))
         }
 
         showOldData()
@@ -67,10 +68,10 @@ class AddHarvestInfoActivity : BaseFragmentActivity<AddHarvestInfoContract.View,
         et_location.setOnClickListener {
             if (isFastDoubleClick) return@setOnClickListener
             when (title) {
-                "发货信息" -> {
+                "1" -> {
                     mPresenter.organization("1")
                 }
-                "收货信息" -> {
+                "2" -> {
                     mPresenter.organization("2")
                 }
             }
@@ -102,13 +103,11 @@ class AddHarvestInfoActivity : BaseFragmentActivity<AddHarvestInfoContract.View,
             }
         }
 
-
         but_save.rlBut.setOnClickListener {
             if (isEmptyCheck()) return@setOnClickListener
-            if (commonToolbar.title == "发货信息") {
-                mRequest.consignor = bean
-            } else if (commonToolbar.title == "收货信息") {
-                mRequest.consignee = bean
+            when (title) {
+                "1" -> mRequest.consignor = bean
+                "2" -> mRequest.consignee = bean
             }
             setResult(Activity.RESULT_OK)
             finish()
@@ -141,23 +140,23 @@ class AddHarvestInfoActivity : BaseFragmentActivity<AddHarvestInfoContract.View,
 
     private fun isEmptyCheck(): Boolean {
         if (et_company.visibility != View.GONE && TextUtils.isEmpty(bean.companyName)) {
-            AirToast.showToast("请输入名称")
+            AirToast.showToast(getString(R.string.please_enter_a_name))
             return true
         }
         if (TextUtils.isEmpty(bean.contact)) {
-            AirToast.showToast("请输入联系人")
+            AirToast.showToast(getString(R.string.please_enter_a_contact))
             return true
         }
         if (TextUtils.isEmpty(bean.phone)) {
-            AirToast.showToast("请输入正确的联系电话")
+            AirToast.showToast(getString(R.string.please_enter_the_correct_contact_number))
             return true
         }
         if (TextUtils.isEmpty(bean.countryCode)) {
-            AirToast.showToast("请输入国家/省/市")
+            AirToast.showToast(getString(R.string.please_enter_country_province_city))
             return true
         }
         if (TextUtils.isEmpty(bean.address1)) {
-            AirToast.showToast("请输入详细地址")
+            AirToast.showToast(getString(R.string.please_enter_the_detailed_address))
             return true
         }
         return false
@@ -258,7 +257,7 @@ class AddHarvestInfoActivity : BaseFragmentActivity<AddHarvestInfoContract.View,
 
     companion object {
         /**
-         * @param
+         * @param 1发 2收
          */
         fun launchActivity(activity: Activity, requestCode: Int, title: String) {
             val intent = Intent(activity, AddHarvestInfoActivity::class.java)

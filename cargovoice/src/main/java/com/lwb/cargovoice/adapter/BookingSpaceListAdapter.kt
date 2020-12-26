@@ -3,8 +3,10 @@ package com.lwb.cargovoice.adapter
 import android.support.v4.content.ContextCompat
 import android.text.TextUtils
 import android.widget.ImageView
+import com.cargo.basecommon.constant.Constant
 import com.cargo.basecommon.utils.AirToast
 import com.cargo.basecommon.utils.CopyTextUtil
+import com.cargo.basecommon.utils.LocalJsonResolutionUtils
 import com.cargo.basecommon.utils.TimeUtils.stampToDateTime
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
@@ -17,9 +19,9 @@ class BookingSpaceListAdapter(layoutResId: Int, data: List<BookingSpaceListRespo
 
         item?.apply {
             //运输方式
-            helper.setText(R.id.tv_plane_or_ship, transportModeDesc)
+            helper.setText(R.id.tv_plane_or_ship, LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "transportMode（运输方式）.json", transportModeCode).nameCn)
             //状态
-            helper.setText(R.id.tv_state, statusDesc)
+            helper.setText(R.id.tv_state, LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "statusType.json", status).nameCn)
 
             //起运港
             helper.setText(R.id.tv_origin_name, portOfOriginName)
@@ -34,8 +36,9 @@ class BookingSpaceListAdapter(layoutResId: Int, data: List<BookingSpaceListRespo
             //预计起运
             helper.setText(R.id.tv_start_time, "ETD $departureDate")
 
+            val containerMode = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "containerMode（装箱方式）.json", containerModeCode)
             //装箱方式
-            helper.setText(R.id.tv_container_way, containerModeDesc)
+            helper.setText(R.id.tv_container_way, if (Constant.isEnglist) containerMode.code else containerMode.nameCn)
             //商品商品重量
             helper.setText(R.id.tv_weight, mContext.fmtMicrometer(totalWeight) + totalWeightUnitCode)
             //商品体积
@@ -43,9 +46,9 @@ class BookingSpaceListAdapter(layoutResId: Int, data: List<BookingSpaceListRespo
 
             //订舱单号
             if (TextUtils.isEmpty(ibookingNo)) {
-                helper.setText(R.id.tv_order_number, "订舱单号：-")
+                helper.setText(R.id.tv_order_number, mContext.getString(R.string.booking_order_number) + ":-")
             } else {
-                helper.setText(R.id.tv_order_number, "订舱单号：$ibookingNo")
+                helper.setText(R.id.tv_order_number, mContext.getString(R.string.booking_order_number) + ":$ibookingNo")
             }
             //订舱时间
             if (TextUtils.isEmpty(ibookingCreateTime)) {
@@ -72,7 +75,7 @@ class BookingSpaceListAdapter(layoutResId: Int, data: List<BookingSpaceListRespo
 
             copy.setOnClickListener {
                 if (TextUtils.isEmpty(ibookingNo)) {
-                    AirToast.showToast("暂无订舱单号")
+                    AirToast.showToast(mContext.getString(R.string.no_booking_order_number))
                     return@setOnClickListener
                 }
                 CopyTextUtil.putTextIntoClip(mContext, ibookingNo)

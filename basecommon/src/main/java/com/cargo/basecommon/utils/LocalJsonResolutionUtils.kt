@@ -2,6 +2,7 @@ package com.cargo.basecommon.utils
 
 import android.content.Context
 import com.cargo.basecommon.bean.GsonBean
+import com.cargo.basecommon.constant.Constant.isEnglist
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
@@ -16,7 +17,7 @@ object LocalJsonResolutionUtils {
      * @param fileName
      * @return
      */
-    fun getJson(context: Context, fileName: String?): String {
+    private fun getJson(context: Context, fileName: String?): String {
         val stringBuilder = StringBuilder()
         //获得assets资源管理器
         val assetManager = context.assets
@@ -34,11 +35,22 @@ object LocalJsonResolutionUtils {
         return stringBuilder.toString()
     }
 
+    /**
+     *  通过文件名字 获得这个json集合
+     */
     @JvmStatic
     fun getJsonListBean(context: Context, fileName: String?): List<GsonBean> {
+        //json 字符串
         val json = getJson(context, fileName)
         val gson = Gson()
-        return gson.fromJson(json, object : TypeToken<List<GsonBean?>?>() {}.type)
+        val list = gson.fromJson<List<GsonBean>>(json, object : TypeToken<List<GsonBean>>() {}.type)
+
+        if (isEnglist) {
+            list?.forEach {
+                it.nameCn = it.nameEn
+            }
+        }
+        return list
     }
 
     /**
@@ -61,16 +73,16 @@ object LocalJsonResolutionUtils {
      * @param fileName 文件名
      * @param name     中文名字
      */
-    @JvmStatic
-    fun getGsonBeanByFileName(context: Context, fileName: String?, name: String?): GsonBean {
-        val jsonListBean = getJsonListBean(context, fileName)
-        for (gsonBean in jsonListBean) {
-            if (name == gsonBean.nameCn) {
-                return gsonBean
-            }
-        }
-        return GsonBean()
-    }
+//    @JvmStatic
+//    fun getGsonBeanByFileName(context: Context, fileName: String?, name: String?): GsonBean {
+//        val jsonListBean = getJsonListBean(context, fileName)
+//        for (gsonBean in jsonListBean) {
+//            if (name == gsonBean.nameCn) {
+//                return gsonBean
+//            }
+//        }
+//        return GsonBean()
+//    }
 
     /**
      * 获取所有港口的集合
@@ -84,15 +96,4 @@ object LocalJsonResolutionUtils {
         return gson.fromJson(json, object : TypeToken<List<List<Any?>?>?>() {}.type)
     }
 
-    /**
-     * 将字符串转换为 对象
-     *
-     * @param json
-     * @param type
-     * @return
-     */
-    fun <T> JsonToObject(json: String?, type: Class<T>?): T {
-        val gson = Gson()
-        return gson.fromJson(json, type)
-    }
 }

@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="日"
+            android:text="@string/day"
             android:textColor="@color/c005"
             android:textSize="14sp" />
 
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="一"
+            android:text="@string/monday"
             android:textColor="@color/c101"
             android:textSize="14sp" />
 
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="二"
+            android:text="@string/tuesday"
             android:textColor="@color/c101"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="三"
+            android:text="@string/wednesday"
             android:textColor="@color/c101"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -72,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="四"
+            android:text="@string/thursday"
             android:textColor="@color/c101"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="五"
+            android:text="@string/friday"
             android:textColor="@color/c101"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -100,7 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="六"
+            android:text="@string/saturday"
             android:textColor="@color/c005"
             android:textSize="14sp" />
     </RelativeLayout>

@@ -49,6 +49,8 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
         //如果 order！=null 说明AI来的 得显示数据
         if (enquiryBookingSpace == 0 || order != null) {
             initView()
+        } else {
+            settingTransportMode()
         }
         initListener()
     }
@@ -64,6 +66,9 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
             Enquiry_BookingSpace = enquiryBookingSpace
             //从快速询价进来的 这时候 大对象还没有实例化 所以在这new，
             EnquiryAddGoalRequest.newInstance(application as BaseApplication)
+            val transportMode = LocalJsonResolutionUtils.getJsonListBean(mContext, "transportMode（运输方式）.json")[0]
+            (application as BaseApplication).request.businessInfo.transportModeCode = transportMode.code
+            (application as BaseApplication).request.businessInfo.transportModeDesc = transportMode.nameCn
         }
         mRequest = (application as BaseApplication).request
         if (order != null) {
@@ -74,9 +79,16 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
 
     override fun setLayout(): Int = R.layout.cargovoice_activity_enquiry_add_goal
 
-    private fun initView() {
+    //设置运输类型
+    private fun settingTransportMode() {
         iv_transport_mode.setImageDrawable(if (mRequest.businessInfo.transportModeCode == "SEA") getDrawable(R.drawable.svg_ic_ship_white) else getDrawable(R.drawable.svg_ic_plane_white))
-        tv_transport_mode.text = if (mRequest.businessInfo.transportModeCode == "SEA") "海运" else "空运"
+        tv_transport_mode.text = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext,
+                "transportMode（运输方式）.json",
+                mRequest.businessInfo.transportModeCode).nameCn
+    }
+
+    private fun initView() {
+        settingTransportMode()
 
         tv_departure_date.text = "ETD " + mRequest.locationInfo.departureDate
         tv_origin_code.text = mRequest.locationInfo.portOfOriginCode
@@ -111,10 +123,13 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
         add_goods_info.settingShow()
 
         //服务级别
-        tv_service_level.setText(mRequest.transportService.serviceLevelDesc)
+        val json = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext,
+                "serviceLevel（服务级别）.json",
+                mRequest.transportService.serviceLevelDesc)
+        et_service_level.setText(json.nameCn)
 
         //贸易条款
-        tv_inco_term.setText(mRequest.transportService.incoTermCode)
+        et_inco_term.setText(mRequest.transportService.incoTermCode)
 
         //发货信息
         add_deliver_info.setCompany(mRequest.consignor?.companyName)
@@ -143,8 +158,7 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
                         if (newTransportModeCode != mRequest.businessInfo.transportModeCode) {
                             mRequest.businessInfo.transportModeCode = newTransportModeCode
                             mRequest.businessInfo.transportModeDesc = LocalJsonResolutionUtils.getGsonBeanByFileNameCode(mContext, "transportMode（运输方式）.json", newTransportModeCode).nameCn
-                            iv_transport_mode.setImageDrawable(if (mRequest.businessInfo.transportModeCode == "SEA") getDrawable(R.drawable.svg_ic_ship_white) else getDrawable(R.drawable.svg_ic_plane_white))
-                            tv_transport_mode.text = if (mRequest.businessInfo.transportModeCode == "SEA") "海运" else "空运"
+                            settingTransportMode()
                             //清除集装箱 集合
                             mRequest.containerList.clear()
                             //让两个箱都 取消选中
@@ -191,7 +205,7 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
 
         ll_encasement.setOnClickListener {
             if (TextUtils.isEmpty(mRequest.businessInfo.transportModeCode)) {
-                AirToast.showToast("请选择运输方式")
+                AirToast.showToast(getString(R.string.please_select_shipping_method))
                 return@setOnClickListener
             }
             ll_bulk.isSelected = false
@@ -227,7 +241,7 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
             val window = SelectDictionaryWindow(mContext, "serviceLevel（服务级别）.json") {
                 mRequest.transportService.serviceLevelCode = it.code
                 mRequest.transportService.serviceLevelDesc = it.nameCn
-                tv_service_level.setText(it.nameCn)
+                et_service_level.setText(it.nameCn)
             }
             window.show()
         }
@@ -236,19 +250,19 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
             val window = SelectDictionaryWindow(mContext, "incoTerm（贸易条款）.json") {
                 mRequest.transportService.incoTermCode = it.code
                 mRequest.transportService.incoTermDesc = it.nameCn
-                tv_inco_term.setText(it.code)
+                et_inco_term.setText(it.code)
             }
             window.show()
         }
 
         //添加发货信息
         add_deliver_info.setPeopleInfoClickListener {
-            AddHarvestInfoActivity.launchActivity(this, 3000, "发货信息")
+            AddHarvestInfoActivity.launchActivity(this, 3000, "1")
         }
 
         //添加收货信息
         add_harvest_info.setPeopleInfoClickListener {
-            AddHarvestInfoActivity.launchActivity(this, 4000, "收货信息")
+            AddHarvestInfoActivity.launchActivity(this, 4000, "2")
         }
 
         commit.rlBut.setOnClickListener {
@@ -349,7 +363,8 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
                     .setCountDownFinishListener {
                         //添加成功后会调用，
                         EventBus.getDefault().postSticky("1")
-                        EnquiryAddGoalRequest.newInstance(application as BaseApplication)
+                        //清空提交数据
+                        (application as BaseApplication).request = null
                         finish()
                     }
             mAddSuccessDialog?.show(supportFragmentManager, "")
@@ -358,43 +373,43 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
 
     private fun isEmptyCheck(): Boolean {
         if (TextUtils.isEmpty(mRequest.businessInfo.transportModeCode)) {
-            AirToast.showToast("请选择运输方式")
+            AirToast.showToast(getString(R.string.please_select_shipping_method))
             return true
         }
         if (TextUtils.isEmpty(mRequest.locationInfo.departureDate)) {
-            AirToast.showToast("请选择起运时间")
+            AirToast.showToast(getString(R.string.please_select_the_departure_time))
             return true
         }
         if (TextUtils.isEmpty(mRequest.locationInfo.portOfOriginName)) {
-            AirToast.showToast("请选择起运港和目的港")
+            AirToast.showToast(getString(R.string.please_select_the_port_of_departure))
             return true
         }
         if (TextUtils.isEmpty(mRequest.businessInfo.containerModeCode)) {
-            AirToast.showToast("请选择集装方式")
+            AirToast.showToast(getString(R.string.please_choose_a_container))
             return true
         }
         if ("FCL" == mRequest.businessInfo.containerModeCode && ListUtils.isEmpty(mRequest.containerList)) {
-            AirToast.showToast("请添加集装箱信息")
+            AirToast.showToast(getString(R.string.please_add_container_information))
             return true
         }
         if (ListUtils.isEmpty(mRequest.commodityList)) {
-            AirToast.showToast("请添加货件信息")
+            AirToast.showToast(getString(R.string.please_add_shipment_information))
             return true
         }
         if (TextUtils.isEmpty(mRequest.transportService.serviceLevelCode)) {
-            AirToast.showToast("请选择服务级别")
+            AirToast.showToast(getString(R.string.please_select_service_level))
             return true
         }
         if (TextUtils.isEmpty(mRequest.transportService.incoTermCode)) {
-            AirToast.showToast("请选择贸易条款")
+            AirToast.showToast(getString(R.string.please_select_trade_terms))
             return true
         }
         if (TextUtils.isEmpty(mRequest.consignor?.contact)) {
-            AirToast.showToast("请添加发货人信息")
+            AirToast.showToast(getString(R.string.please_add_shipper_information))
             return true
         }
         if (TextUtils.isEmpty(mRequest.consignee?.contact)) {
-            AirToast.showToast("请添加收货人信息")
+            AirToast.showToast(getString(R.string.please_add_consignee_information))
             return true
         }
         return false
@@ -402,10 +417,6 @@ class EnquiryAddGoalActivity : BaseFragmentActivity<EnquiryAddGoalContract.View?
 
     override fun initPresenter() {
         mPresenter = EnquiryAddGoalPresenter(mContext)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
     }
 
     override fun onSuccess(response: EnquiryAddGoalResponse?) {
